@@ -1,0 +1,28 @@
+Package: BiocFHIR
+Title: Illustration of FHIR ingestion and transformation using python infrastructure via basilisk
+Version: 0.0.1
+Authors@R: 
+    c(person(
+        "Vincent", "Carey", role = c("aut", "cre"),
+        email = "stvjc@channing.harvard.edu"
+     ),
+      person("Alexander", "Scarlat", role="aut")
+    )
+Description: FHIR R4 bundles in JSON format are derived from https://synthea.mitre.org/downloads.
+	Parsing and restructuring code uses methods from a kaggle notebook published by Dr
+	Alexander Scarlat, https://www.kaggle.com/code/drscarlat/fhir-starter-parse-healthcare-bundles-into-tables.
+License: Artistic-2.0
+Encoding: UTF-8
+Depends: R (>= 4.2), dplyr
+Imports:
+    methods,
+    tibble,
+    basilisk,
+    reticulate,
+    DT,
+    shiny
+Suggests: knitr, testthat
+LazyData: true
+VignetteBuilder: knitr
+biocViews: Infrastructure
+RoxygenNote: 7.2.1
