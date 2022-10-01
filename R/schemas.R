@@ -21,8 +21,8 @@ list(
   Procedure = c("id", "subject", "status", "performedPeriod", "code"),
   Patient = c("id", "identifier", "name", 
     "telecom", "gender", "birthDate", "deceasedDateTime", "address", 
-    "maritalStatus", "multipleBirthBoolean", "communication", "active")
+    "maritalStatus", "multipleBirthBoolean", "communication", "active"),
   Immunization = c("id", "patient", "vaccineCode", "occurrenceDateTime")
  )
-)
+}
 

@@ -1,0 +1,60 @@
+#' process a bundle of FHIR R4 JSON
+#' @importFrom jsonlite fromJSON
+#' @param json_file character(1) path to text in JSON format
+#' @examples
+#' testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
+#'    package="BiocFHIR")
+#' process_fhir_bundle(testf)
+#' @export
+process_fhir_bundle = function(json_file) {
+  dat = fromJSON(json_file)
+  stopifnot(all(names(dat) %in% c("resourceType", "type", "entry")))
+  stopifnot(dat$resourceType == "Bundle")
+  de = dat$entry
+  spl = split(de$resource, de$resource$resourceType)
+  nres = names(spl)
+  ok = intersect(nres, available_retention_schemas())
+  scs = FHIR_retention_schemas()
+  ans = lapply(ok, function(x) spl[[x]][, scs[[x]]])
+  names(ans) = ok
+  class(ans) = c("FHIR.bundle", "list")
+  ans
+}
+
+#' print method
+#' @export
+print.FHIR.bundle = function(x, ...) {
+  cat("BiocFHIR FHIR.bundle instance.\n")
+  cat("  resource types are:\n")
+  cat("  ", selectSome(names(x)))
+  cat("\n")
+}
+
+
+
+#' list available 'retention schemas'
+#' @examples
+#' available_retention_schemas()
+#' @export
+available_retention_schemas = function()
+ names(FHIR_retention_schemas())
+
+
+#' from Biobase ...
+selectSome = function (obj, maxToShow = 5) 
+{
+    len <- length(obj)
+    if (maxToShow < 3) 
+        maxToShow <- 3
+    if (len > maxToShow) {
+        maxToShow <- maxToShow - 1
+        bot <- ceiling(maxToShow/2)
+        top <- len - (maxToShow - bot - 1)
+        nms <- obj[c(1:bot, top:len)]
+        c(as.character(nms[1:bot]), "...", as.character(nms[-c(1:bot)]))
+    }
+    else if (is.factor(obj)) 
+        as.character(obj)
+    else obj
+}
+
