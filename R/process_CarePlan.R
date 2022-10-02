@@ -9,6 +9,7 @@
 #' @export
 process_CarePlan = function(CarePlan) {
 # record count
+ stopifnot(inherits(CarePlan, "BiocFHIR.CarePlan"))
  ac = CarePlan$activity
  recc = vapply(ac, nrow, numeric(1)) -> recc
  idvec = rep(CarePlan$id, recc)  # event ids

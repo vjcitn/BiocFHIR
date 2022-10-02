@@ -37,5 +37,6 @@ process_Patient = function(Patient) {
 # we want to flatten this, but the NULL for coding for the first system is a bit
 # of a problem.  Simple solution is to unlist all Patient components
 #
+  stopifnot(inherits(Patient, "BiocFHIR.Patient"))
   do.call(data.frame, lapply(Patient, function(x) data.frame(t(unlist(x)))))
 }

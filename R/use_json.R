@@ -5,7 +5,8 @@
 #' @examples
 #' testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
 #'    package="BiocFHIR")
-#' process_fhir_bundle(testf)
+#' tbun = process_fhir_bundle(testf)
+#' tbun
 #' @export
 process_fhir_bundle = function(json_file) {
   dat = fromJSON(json_file)
