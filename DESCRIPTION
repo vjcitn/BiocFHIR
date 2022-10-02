@@ -1,6 +1,6 @@
 Package: BiocFHIR
 Title: Illustration of FHIR ingestion and transformation using python infrastructure via basilisk
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: 
     c(person(
         "Vincent", "Carey", role = c("aut", "cre"),
@@ -17,8 +17,7 @@ Imports:
     tibble,
     DT,
     shiny,
-    jsonlite,
-    tidyr
+    jsonlite
 Suggests: knitr, testthat
 LazyData: true
 VignetteBuilder: knitr
