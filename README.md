@@ -7,4 +7,4 @@ This R package addresses very basic tasks of parsing FHIR R4 documents in JSON f
 
 We will work through elements of the following concept map:
 
-![coggle](https://github.com/vjcitn/BiocFHIR/blob/main/conceptmap.jpg)
+![coggle](https://github.com/vjcitn/BiocFHIR/raw/main/conceptmap.jpg)

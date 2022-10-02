@@ -1,6 +1,6 @@
 Package: BiocFHIR
 Title: Illustration of FHIR ingestion and transformation using python infrastructure via basilisk
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: 
     c(person(
         "Vincent", "Carey", role = c("aut", "cre"),
@@ -23,3 +23,5 @@ LazyData: true
 VignetteBuilder: knitr
 biocViews: Infrastructure
 RoxygenNote: 7.2.1
+URL: https://github.com/vjcitn/BiocFHIR
+BugReports: https://github.com/vjcitn/BiocFHIR/issues

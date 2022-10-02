@@ -18,6 +18,7 @@ list(
   Claim = c("id", "provider", "patient", "billablePeriod", "insurance", "created"),
   Encounter = c("id", "type", "subject", "period", "serviceProvider"),
   MedicationRequest = c("id", "subject", "status", "requester", "medicationCodeableConcept"),
+  Observation = c("id", "subject", "code"),
   Procedure = c("id", "subject", "status", "performedPeriod", "code"),
   Patient = c("id", "identifier", "name", 
     "telecom", "gender", "birthDate", "address",   # dropped deceasedDateTime oct 2 2022

@@ -10,6 +10,6 @@
 #' @export
 process_Condition = function(Condition) {
  stopifnot(inherits(Condition, "BiocFHIR.Condition"))
- coding = do.call(rbind, tbun$Condition$code$coding)
+ coding = do.call(rbind, Condition$code$coding)
  data.frame(id=Condition$id,subject.reference=Condition$subject$reference, code.coding=coding)
 }
