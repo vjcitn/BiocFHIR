@@ -1,0 +1,88 @@
+---
+title: "BiocFHIR -- infrastructure for parsing and analyzing FHIR data"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{BiocFHIR -- infrastructure for parsing and analyzing FHIR data}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,results="hide",echo=FALSE}
+suppressPackageStartupMessages({
+suppressMessages({
+library(BiocFHIR)
+library(DT)
+library(jsonlite)
+})
+})
+```
+
+# Introduction
+
+FHIR stands for Fast Health Interoperability Resources.  
+
+The [Wikipedia article](https://en.wikipedia.org/wiki/Fast_Healthcare_Interoperability_Resources)
+is a useful overview.  The official website is [fhir.org](http://fhir.org).
+
+This R package addresses very basic tasks of parsing FHIR R4 documents in JSON format.
+The overall information model of FHIR documents is complex and various
+decisions are made to help extract and annotate fields presumed to have
+high value.  Submit github issues if important fields are not being
+propagated.
+
+## The basic structure of FHIR R4 JSON
+
+We use `jsonlite::fromJSON` to import a randomly selected
+FHIR document from a collection simulated by the MITRE corporation.
+See the associated [site](https://synthea.mitre.org/downloads) for details.
+
+We'll drill down through the hierarchy of elements collected in
+a FHIR document with some base R commands, after importing the JSON.
+```{r lkd1}
+testf = dir(system.file("json", package="BiocFHIR"), full=TRUE)
+tt = fromJSON(testf)
+names(tt)
+tt[1:2]
+tte = tt$entry
+class(tte)
+dim(tte)
+head(names(tte))
+tter = tte$resource
+dim(tter)
+head(names(tter))
+table(tter$resourceType)
+```
+
+It is by filtering the data frame `tter` that we acquire
+information that may be useful in data analysis.  The
+data frame is sparse: many fields are not used in many records.
+Code in this package attempts to produce useful tables
+from the sparse information.
+
+As a prologue to table extraction, we do some basic
+decomposition of `tter` using `process_fhir_bundle`.
+
+```{r dobu1}
+bu1 = process_fhir_bundle(testf) # just give file path
+bu1
+```
+
+`bu1` is just a list of data.frames, but with considerable
+nesting of data.frames and lists within the basic
+data.frames corresponding to the major FHIR concepts.
+"Flattening" of such structures is not fully automatic.
+
+## Example: a table on Conditions recorded on the patient.
+
+We use `process_Condition` to extract information.
+```{r dopro1}
+cond1 = process_Condition(bu1$Condition)
+datatable(cond1)
+```
