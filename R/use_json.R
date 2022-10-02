@@ -1,5 +1,6 @@
 #' process a bundle of FHIR R4 JSON
 #' @importFrom jsonlite fromJSON
+#' @importFrom tidyr unnest
 #' @param json_file character(1) path to text in JSON format
 #' @examples
 #' testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
@@ -17,8 +18,31 @@ process_fhir_bundle = function(json_file) {
   scs = FHIR_retention_schemas()
   ans = lapply(ok, function(x) spl[[x]][, scs[[x]]])
   names(ans) = ok
+  ans = lapply(ok, function(x) {class(ans[[x]]) = c(paste0("BiocFHIR.", x), class(ans[[x]])); ans[[x]]})
+  names(ans) = ok # lapply does not propagate by default
   class(ans) = c("FHIR.bundle", "list")
   ans
+}
+
+fixup_Patient = function(dfr) {
+  colclasses = vapply(dfr, class, character(1))
+  is_df = which(colclasses == "data.frame")
+  is_list = which(colclasses == "list")
+  ok = setdiff(seq_len(ncol(dfr)), c(is_df, is_list))
+  newd = dfr[,ok,drop=FALSE]
+  needsu = dfr[,is_df,drop=FALSE]
+  better = lapply(needsu, unnest, cols=c())
+  cbind(newd, needsu, better)
+}
+  
+
+do_unnest = function(dfr) {
+  ok = setdiff(seq_len(ncol(dfr)), c(is_df, is_list))
+  newd = dfr[,ok,drop=FALSE]
+  better = lapply(needsu, unnest, cols=c())
+  fixl = lapply(dfr[,is_list,drop=FALSE], "[[", 1)
+  bfix = lapply(fixl, unnest, cols=c())
+  do.call(cbind, c(newd, better, bfix))
 }
 
 #' print method

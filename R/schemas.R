@@ -20,7 +20,7 @@ list(
   MedicationRequest = c("id", "subject", "status", "requester", "medicationCodeableConcept"),
   Procedure = c("id", "subject", "status", "performedPeriod", "code"),
   Patient = c("id", "identifier", "name", 
-    "telecom", "gender", "birthDate", "deceasedDateTime", "address", 
+    "telecom", "gender", "birthDate", "address",   # dropped deceasedDateTime oct 2 2022
     "maritalStatus", "multipleBirthBoolean", "communication", "active"),
   Immunization = c("id", "patient", "vaccineCode", "occurrenceDateTime")
  )
