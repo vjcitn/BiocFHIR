@@ -12,6 +12,6 @@ process_Claim = function(Claim) {
  stopifnot(inherits(Claim, "BiocFHIR.Claim"))
  ins = Claim$insurance
  insdf = do.call(rbind, lapply(ins, tidyr::unnest, cols=c()))
- data.frame(id=cl$id,patient=cl$patient,provider=cl$provider, insurance=insdf,
-     billablePeriod=cl$billablePeriod, created=cl$created)
+ data.frame(id=Claim$id,patient=Claim$patient,provider=Claim$provider, insurance=insdf,
+     billablePeriod=Claim$billablePeriod, created=Claim$created)
 }

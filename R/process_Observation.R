@@ -12,5 +12,5 @@
 process_Observation = function(Observation) {
  stopifnot(inherits(Observation, "BiocFHIR.Observation"))
  coding = do.call(rbind, Observation$code$coding)
- data.frame(id=Observation$id, code.coding=coding)
+ data.frame(id=Observation$id, subject.reference=Observation$subject$reference, code.coding=coding, valueQuantity=Observation$valueQuantity, effectiveDateTime=Observation$effectiveDateTime, issued=Observation$issued)
 }
