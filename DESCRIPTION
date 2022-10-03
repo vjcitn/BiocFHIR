@@ -1,6 +1,7 @@
 Package: BiocFHIR
 Title: Illustration of FHIR ingestion and transformation using python infrastructure via basilisk
-Version: 0.0.8
+Version: 0.0.9
+Date: 2022-10-03
 Authors@R: 
     c(person(
         "Vincent", "Carey", role = c("aut", "cre"),
