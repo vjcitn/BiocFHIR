@@ -1,0 +1,122 @@
+#1: replacing previous import 'graph::union' by 'igraph::union' when loading 'BiocFHIR' 
+#2: replacing previous import 'graph::edges' by 'igraph::edges' when loading 'BiocFHIR' 
+#3: replacing previous import 'graph::intersection' by 'igraph::intersection' when loading 'BiocFHIR' 
+#4: replacing previous import 'graph::degree' by 'igraph::degree' when loading 'BiocFHIR' 
+
+
+#' get human name from a BiocFHIR.Patient instance
+#' @rawNamespace import("graph", except=c("union", "edges", "intersection", "degree"))
+#' @export
+getHumanName = function(Patient) { 
+   stopifnot(inherits(Patient, "BiocFHIR.Patient"))
+   ul = unlist(Patient);   # unpleasant to avoid "process_Patient" but simpler?
+   if (!is.na(ul["name.family1"]))
+     return(paste0(ul["name.family1"], ul["name.family2"]))
+   else  return(paste0(ul["name.given"], ul["name.family"]))
+}
+
+#' create graph with links from patients to conditions
+#' @export
+make_condition_graph = function(listOfProcessedBundles) {
+
+ patients = sapply(listOfProcessedBundles, function(x) getHumanName(x$Patient))
+ condg = new("graphNEL", nodes=patients)
+ condg@graphData = list(edgemode="directed")
+
+ nn = lapply( listOfProcessedBundles, function(x) {
+    curn = getHumanName(x$Patient)
+    curconds = try(process_Condition(x$Condition)) #$code.coding.display)
+    if (inherits(curconds, "try-error")) return(curconds)
+    curconds = curconds$code.coding.display
+#    if (!is.null(curconds)) {
+    newnodes = setdiff(curconds, nodes(condg))
+    if (length(newnodes)>0) {
+      condg = addNode(newnodes, condg)
+      }
+   condg <<- addEdge( curn, curconds, condg)  # must use current conditions
+   condg
+#    }
+    })
+ errs = sapply(nn, inherits, "try-error")
+ haserr = sum(errs)
+ if (haserr > 0) message("some bundles had no Condition component")
+ conditions = setdiff(nodes(condg), patients) # hokey
+ ans = list(graph=condg, patients=patients, conditions=conditions)
+ class(ans) = "BiocFHIR.FHIRgraph"
+ ans
+}
+
+#' show a combination of graph and patient attributes
+#' @export
+print.BiocFHIR.FHIRgraph = function(x, ...) {
+ cat("BiocFHIR.FHIRgraph instance.\n")
+ print(x$graph)
+ cat(sprintf(" %d patients, %d conditions\n", length(x$patients), length(x$conditions)))
+}
+
+
+#' update a fhir graph on patients and conditions with procedures
+#' @export
+add_procedures = function(fhirgraph, listOfProcessedBundles) {
+ stopifnot(inherits(fhirgraph, "BiocFHIR.FHIRgraph"))
+ curg = fhirgraph$graph
+ nn = lapply( listOfProcessedBundles, function(x) {
+    curn = getHumanName(x$Patient)
+    curprocs = try(process_Procedure(x$Procedure)) # $code.display)
+    if (inherits(curprocs, "try-error")) return(curprocs)
+    curprocs = curprocs$code.display
+    newnodes = setdiff(curprocs, nodes(curg))
+    if (length(newnodes)>0) {
+        curg = addNode(newnodes, curg)
+        }
+   curg <<- addEdge( curn, curprocs, curg)
+    curg
+    })
+ errs = sapply(nn, inherits, "try-error")
+ haserr = sum(errs)
+ if (haserr > 0) message("some bundles had no Procedure component")
+ fhirgraph$procedures = setdiff(nodes(curg), nodes(fhirgraph$graph))
+ fhirgraph$graph = curg
+ fhirgraph
+}
+
+#library(BiocFHIR)
+#library(graph)
+#library(parallel)
+#library(igraph)
+#options(mc.cores=4)
+##allin = mclapply(dir(patt="json$"), process_fhir_bundle)
+#load("allin.rda")
+#condg = make_condition_graph( allin )
+#condg = add_procedures( condg, allin )
+#condg
+#
+#ii = igraph.from.graphNEL(condg$graph)
+
+
+
+#' build graph with patients, conditions and procedures
+#' @import igraph
+#' @export
+build_proccond_igraph = function( listOfBundles ) {
+ condg = make_condition_graph( listOfBundles )
+ condg = add_procedures( condg, listOfBundles )
+ ii = igraph.from.graphNEL( condg$graph )
+ V(ii)$color[ names(V(ii)) %in% condg$conditions ] = "red"
+ V(ii)$color[ names(V(ii)) %in% condg$procedures ] = "green"
+ V(ii)$color[ names(V(ii)) %in% condg$patients ] = "blue"
+ ii
+}
+
+#' make network visualization
+#' @importFrom visNetwork visIgraph
+#' @examples
+#' data(allin)
+#' g = build_proccond_igraph( allin ) 
+#' if (interactive()) {
+#'  display_proccond_igraph( g )
+#' }
+#' @export
+display_proccond_igraph = function( igraph ) {
+ visIgraph( igraph )
+}

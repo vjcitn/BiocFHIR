@@ -1,6 +1,6 @@
 Package: BiocFHIR
 Title: Illustration of FHIR ingestion and transformation using R
-Version: 0.0.12
+Version: 0.0.14
 Date: 2022-10-03
 Authors@R: 
     c(person(
@@ -12,14 +12,12 @@ Description: FHIR R4 bundles in JSON format are derived from https://synthea.mit
 	Alexander Scarlat, https://www.kaggle.com/code/drscarlat/fhir-starter-parse-healthcare-bundles-into-tables.
 License: Artistic-2.0
 Encoding: UTF-8
-Depends: R (>= 4.2), dplyr
+Depends: R (>= 4.2)
 Imports:
-    methods,
-    tibble,
     DT,
     shiny,
-    jsonlite, 
-    tidyr
+    jsonlite, graph,
+    tidyr, visNetwork, igraph
 Suggests: knitr, testthat
 LazyData: true
 VignetteBuilder: knitr
