@@ -58,6 +58,11 @@ FHIRtabs = function() {
       tabPanel("claims",
        DT::dataTableOutput("claims")
        ),
+      tabPanel("network",
+       helpText("This is a display of relations among patients, conditions, and procedures for 50 synthea bundles"),
+       helpText("Use clickwheel to zoom in, click on to drag"),
+       visNetwork::visNetworkOutput("network")
+       ),
       tabPanel("about",
        helpText("FHIR documents were sampled from those distributed at 
 https://synthetichealth.github.io/synthea-sample-data/downloads/synthea_sample_data_fhir_r4_sep2019.zip"),
@@ -112,6 +117,12 @@ an individual.  A 'fallback' schema usage may be adopted in future versions to c
          })
      output$schema = renderPrint({
          BiocFHIR::FHIR_retention_schemas()
+         })
+     output$network = visNetwork::renderVisNetwork({
+         data(allin)
+         BiocFHIR::FHIR_retention_schemas()
+         g = build_proccond_igraph( allin ) 
+         display_proccond_igraph( g )
          })
      output$pkgdesc = renderPrint({
          packageDescription("BiocFHIR")
