@@ -28,7 +28,9 @@ FHIRtabs = function() {
    sidebarLayout(
     sidebarPanel(
      helpText("FHIR viewer for synthea data subset"),
-     selectInput("indiv", "Person", choices=fns), width=2
+     selectInput("indiv", "Person", choices=fns), 
+     actionButton("stopBtn", "stop app"),
+     width=2
      ),
     mainPanel(
      tabsetPanel(
@@ -41,8 +43,17 @@ FHIRtabs = function() {
       tabPanel("encounter",
        DT::dataTableOutput("encounter")
        ),
+      tabPanel("Rx",
+       DT::dataTableOutput("Rx")
+       ),
       tabPanel("observation",
        DT::dataTableOutput("observation")
+       ),
+      tabPanel("procedure",
+       DT::dataTableOutput("procedure")
+       ),
+      tabPanel("careplan",
+       DT::dataTableOutput("careplan")
        ),
       tabPanel("claims",
        DT::dataTableOutput("claims")
@@ -90,12 +101,25 @@ an individual.  A 'fallback' schema usage may be adopted in future versions to c
      output$encounter = DT::renderDataTable({
          process_Encounter(fdat()$Encounter)
          })
+     output$Rx = DT::renderDataTable({
+         process_MedicationRequest(fdat()$MedicationRequest)
+         })
+     output$procedure = DT::renderDataTable({
+         process_Procedure(fdat()$Procedure)
+         })
+     output$careplan = DT::renderDataTable({
+         process_CarePlan(fdat()$CarePlan)
+         })
      output$schema = renderPrint({
          BiocFHIR::FHIR_retention_schemas()
          })
      output$pkgdesc = renderPrint({
          packageDescription("BiocFHIR")
          })
+     observeEvent(input$stopBtn, {
+       stopApp(returnValue=NULL)   # could return information here
+      })
+
      }
     runApp(list(ui=ui, server=server))
    }

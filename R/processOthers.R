@@ -67,7 +67,8 @@ process_AllergyIntolerance = function(AllergyIntolerance) {
 process_MedicationRequest = function(MedicationRequest) {
   stopifnot(inherits(MedicationRequest, "BiocFHIR.MedicationRequest"))
   mr = MedicationRequest
-  data.frame(id=MedicationRequest$id, subject=mr$subject$reference, status=mr$status, requester=mr$requester, medicationCodeableConcept=mr$medicationCodeableConcept)
+  mrco = do.call(rbind, mr$medicationCodeableConcept$coding)
+  data.frame(id=MedicationRequest$id, subject=mr$subject$reference, status=mr$status, requester=mr$requester, medicationCodeableConcept=mrco)
 }
 
 #' extract information from retained fields in Procedure component of FHIR Bundle, produce simple data.frame
