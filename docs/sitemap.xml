@@ -10,6 +10,12 @@
     <loc>https://github.com/vjcitn/BiocFHIR/articles/02_handling.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/articles/A_upper.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/articles/B_handling.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/BiocFHIR/articles/BiocFHIR.html</loc>
   </url>
   <url>
@@ -38,6 +44,9 @@
   </url>
   <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/add_procedures.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/allin.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/available_retention_schemas.html</loc>
