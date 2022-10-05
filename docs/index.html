@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Illustration of FHIR ingestion and transformation using python infrastructure via basilisk • BiocFHIR</title>
+<title>Illustration of FHIR ingestion and transformation using R • BiocFHIR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Illustration of FHIR ingestion and transformation using python infrastructure via basilisk">
+<script src="pkgdown.js"></script><meta property="og:title" content="Illustration of FHIR ingestion and transformation using R">
 <meta property="og:description" content="FHIR R4 bundles in JSON format are derived from https://synthea.mitre.org/downloads.
 	Transformation inspired by a kaggle notebook published by Dr
 	Alexander Scarlat, https://www.kaggle.com/code/drscarlat/fhir-starter-parse-healthcare-bundles-into-tables.">
@@ -35,7 +35,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">BiocFHIR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.15</span>
       </span>
     </div>
 
@@ -46,6 +46,21 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/01_upper.html">Upper level FHIR concepts</a>
+    </li>
+    <li>
+      <a href="articles/02_handling.html">Handling FHIR documents with BiocFHIR</a>
+    </li>
+  </ul>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -67,6 +82,7 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
 <div class="section level1">
 <div class="page-header"><h1 id="biocfhir">BiocFHIR<a class="anchor" aria-label="anchor" href="#biocfhir"></a>
 </h1></div>
@@ -77,6 +93,22 @@
 <img src="https://github.com/vjcitn/BiocFHIR/raw/main/conceptmap.jpg" alt="coggle"><p class="caption">coggle</p>
 </div>
 </div>
+<div class="section level1">
+<h1 id="use-in-anvil">Use in AnVIL<a class="anchor" aria-label="anchor" href="#use-in-anvil"></a>
+</h1>
+<p>In a terra workspace</p>
+<ul>
+<li>use an Rstudio cloud environment</li>
+<li>start a git project</li>
+<li>use <a href="https://github.com/vjcitn/BiocFHIR" class="uri">https://github.com/vjcitn/BiocFHIR</a> as the repository</li>
+<li>in the Rstudio console<ul>
+<li>use <code>BiocManager::install("vjcitn/BiocFHIR")</code> to get the software</li>
+<li>navigate to the vignettes folder and knit the Rmd file to HTML</li>
+</ul>
+</li>
+</ul>
+</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

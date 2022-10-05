@@ -20,7 +20,7 @@ process_Encounter = function(Encounter) {
     period=per)
 }
 
-#' extract information from retained fields in Observation component of FHIR Bundle, produce simple data.frame
+#' extract information from retained fields in AllergyIntolerance component of FHIR Bundle, produce simple data.frame
 #' @importFrom tidyr unnest
 #' @param AllergyIntolerance component of FHIR.bundle instance
 #' @return data.frame

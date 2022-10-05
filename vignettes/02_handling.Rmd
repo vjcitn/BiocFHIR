@@ -1,0 +1,135 @@
+---
+title: "Handling FHIR documents with BiocFHIR"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Handling FHIR documents with BiocFHIR}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,results="hide",echo=FALSE}
+suppressPackageStartupMessages({
+suppressMessages({
+library(BiocFHIR)
+library(DT)
+library(jsonlite)
+})
+})
+```
+
+# Introduction
+
+The purpose of this vignette is to provide
+details on how FHIR documents are
+handled in BiocFHIR.
+
+This text uses R commands that will work for an R (version 4.2 or greater) in which
+BiocFHIR (version 0.0.14 or greater) has been installed.  The source codes are
+always available at [github](https://github.com/vjcitn/BiocFHIR) and may
+be available for installation by other means.
+
+# Examining sample data, again
+
+In the "Upper level FHIR concepts" vignette, we used the
+following code to get a peek at the information
+structure in a single document representing a Bundle
+associated with a patient.
+
+```{r takepeek}
+tfile = dir(system.file("json", package="BiocFHIR"), full=TRUE)
+peek = jsonlite::fromJSON(tfile)
+names(peek)
+peek$resourceType
+names(peek$entry)
+length(names(peek$entry$resource))
+class(peek$entry$resource)
+dim(peek$entry$resource)
+head(names(peek$entry$resource))
+```
+
+# Choosing an approach to FHIR JSON ingestion
+
+Some of the complexity of working with FHIR JSON in R in this way
+can be seen in the following:
+
+```{r lkcat}
+head(which(vapply(peek$entry$resource$category, 
+   function(x)!is.null(x), logical(1))))
+peek$entry$resource$category[[6]]
+peek$entry$resource$category[[6]]$coding
+peek$entry$resource$category[[10]]
+```
+
+Elements of category can be data.frame or atomic.
+This is a consequence of naive use of `jsonlite::fromJSON`.
+
+When we reduce the transformations attempted by `fromJSON`,
+empty fields are not propagated.
+
+```{r lkpeek2}
+peek2 = jsonlite::fromJSON(dir(system.file("json", package="BiocFHIR"), full=TRUE), simplifyVector=FALSE)
+lapply(peek2$entry[1:5], function(x) names(x[["resource"]]))
+```
+
+Because the JSON ingestion does not attempt to simplify
+table-like content, we have a list of lists with varying
+depths of nesting.
+
+We can tabulate the resource types using
+```{r lktab}
+rtyvec = vapply(peek2$entry, function(x) 
+   x[["resource"]]$resourceType, character(1))
+table(rtyvec)
+```
+
+# Working with a specific type
+
+## List-based operations
+
+Let's use `peek2` to extract
+Conditions recorded on the patient.
+
+```{r getcond}
+iscond = which(rtyvec == "Condition")
+conds = peek2$entry[iscond]
+length(conds)
+str(conds[[1]])
+```
+
+Digging out the data and metadata on the first condition 
+recorded (Perennial allergic rhinitis), is somewhat
+complex using R.  Direct operations on JSON with JMESPATH
+might be more effective, but we postpone this investigation.
+
+## Processing with BiocFHIR
+
+In the `process_fhir_bundle` function of BiocFHIR
+we allow `jsonlite::fromJSON` to conduct some
+simplification of list structures amenable to representation
+as tables (data.frames).
+```{r chkb}
+tbu = process_fhir_bundle(tfile)
+tbu
+```
+
+For the reports of Conditions, we extract specific
+fields that are commonly used in the Synthea examples.
+Other bundle sets may use different fields.
+
+```{r lktab2}
+ctab = process_Condition(tbu$Condition)
+dim(ctab)
+datatable(ctab)
+```
+
+The fields collected in `process_Condition` are specified
+in `FHIR_retention_schemas()`.  Eventually this will
+need to become a user-specified element of ingestion and
+transformation.

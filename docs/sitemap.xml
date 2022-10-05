@@ -4,10 +4,22 @@
     <loc>https://github.com/vjcitn/BiocFHIR/404.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/articles/01_upper.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/articles/02_handling.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/BiocFHIR/articles/BiocFHIR.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/articles/handling.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/BiocFHIR/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/articles/upper.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/BiocFHIR/authors.html</loc>
@@ -22,16 +34,40 @@
     <loc>https://github.com/vjcitn/BiocFHIR/reference/FHIR_retention_schemas.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/FHIRtabs.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/add_procedures.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/available_retention_schemas.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/build_proccond_igraph.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/display_proccond_igraph.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/getHumanName.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/make_condition_graph.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/make_test_json_set.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/print.BiocFHIR.FHIRgraph.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/print.FHIR.bundle.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/process_AllergyIntolerance.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/process_CarePlan.html</loc>
@@ -43,10 +79,22 @@
     <loc>https://github.com/vjcitn/BiocFHIR/reference/process_Condition.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/process_Encounter.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/process_Immunization.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/process_MedicationRequest.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/process_Observation.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/process_Patient.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/BiocFHIR/reference/process_Procedure.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/BiocFHIR/reference/process_fhir_bundle.html</loc>

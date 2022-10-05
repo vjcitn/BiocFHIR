@@ -2,7 +2,7 @@
 % Please edit documentation in R/processOthers.R
 \name{process_AllergyIntolerance}
 \alias{process_AllergyIntolerance}
-\title{extract information from retained fields in Observation component of FHIR Bundle, produce simple data.frame}
+\title{extract information from retained fields in AllergyIntolerance component of FHIR Bundle, produce simple data.frame}
 \usage{
 process_AllergyIntolerance(AllergyIntolerance)
 }
@@ -13,7 +13,7 @@ process_AllergyIntolerance(AllergyIntolerance)
 data.frame
 }
 \description{
-extract information from retained fields in Observation component of FHIR Bundle, produce simple data.frame
+extract information from retained fields in AllergyIntolerance component of FHIR Bundle, produce simple data.frame
 }
 \examples{
 testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",

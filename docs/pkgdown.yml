@@ -2,8 +2,10 @@ pandoc: '2.5'
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
+  01_upper: 01_upper.html
+  02_handling: 02_handling.html
   BiocFHIR: BiocFHIR.html
-last_built: 2022-10-02T20:22Z
+last_built: 2022-10-05T11:35Z
 urls:
   reference: https://github.com/vjcitn/BiocFHIR/reference
   article: https://github.com/vjcitn/BiocFHIR/articles
