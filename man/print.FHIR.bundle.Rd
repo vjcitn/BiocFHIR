@@ -6,6 +6,11 @@
 \usage{
 \method{print}{FHIR.bundle}(x, ...)
 }
+\arguments{
+\item{x}{BiocFHIR FHIR.bundle instance}
+
+\item{\dots}{not used}
+}
 \description{
 print method
 }

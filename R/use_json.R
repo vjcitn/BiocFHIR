@@ -46,6 +46,8 @@ process_fhir_bundle = function(json_file) {
 #}
 
 #' print method
+#' @param x BiocFHIR FHIR.bundle instance
+#' @param \dots not used
 #' @export
 print.FHIR.bundle = function(x, ...) {
   cat("BiocFHIR FHIR.bundle instance.\n")
@@ -65,6 +67,8 @@ available_retention_schemas = function()
 
 
 #' from Biobase ...
+#' @param obj any vector
+#' @param maxToShow numeric(1)
 selectSome = function (obj, maxToShow = 5) 
 {
     len <- length(obj)

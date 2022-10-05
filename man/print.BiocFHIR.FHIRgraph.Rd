@@ -6,6 +6,11 @@
 \usage{
 \method{print}{BiocFHIR.FHIRgraph}(x, ...)
 }
+\arguments{
+\item{x}{instance of BiocFHIR.FHIRgraph}
+
+\item{\dots}{not used}
+}
 \description{
 show a combination of graph and patient attributes
 }

@@ -6,6 +6,9 @@
 \usage{
 getHumanName(Patient)
 }
+\arguments{
+\item{Patient}{BiocFHIR.Patient instance}
+}
 \description{
 get human name from a BiocFHIR.Patient instance
 }

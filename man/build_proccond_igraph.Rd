@@ -6,6 +6,9 @@
 \usage{
 build_proccond_igraph(listOfBundles)
 }
+\arguments{
+\item{listOfBundles}{list of processed FHIR bundles, processed with `process_fhir_bundle`}
+}
 \description{
 build graph with patients, conditions and procedures
 }

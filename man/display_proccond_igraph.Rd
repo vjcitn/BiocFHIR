@@ -6,6 +6,9 @@
 \usage{
 display_proccond_igraph(igraph)
 }
+\arguments{
+\item{igraph}{instance of igraph produced by `build_procond_igraph`}
+}
 \description{
 make network visualization
 }

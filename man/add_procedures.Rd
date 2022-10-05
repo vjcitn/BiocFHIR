@@ -6,6 +6,11 @@
 \usage{
 add_procedures(fhirgraph, listOfProcessedBundles)
 }
+\arguments{
+\item{fhirgraph}{instance of BiocFHIR.FHIRgraph}
+
+\item{listOfProcessedBundles}{list}
+}
 \description{
 update a fhir graph on patients and conditions with procedures
 }

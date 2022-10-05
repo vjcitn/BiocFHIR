@@ -22,7 +22,7 @@ tbun = process_fhir_bundle(testf)
 tpat = process_Patient(tbun$Patient)
 head(names(tpat))
 tags = c("identifier.system3", "identifier.value3")
-tpat[tags]
-tags2 = grep("extension.extension", names(tpat), value=TRUE)
-tpat[tags2]
+tpat[tags,,FALSE]
+tags2 = grep("extension.extension", rownames(tpat), value=TRUE)
+tpat[tags2,,FALSE]
 }

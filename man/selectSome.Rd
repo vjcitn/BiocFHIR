@@ -6,6 +6,11 @@
 \usage{
 selectSome(obj, maxToShow = 5)
 }
+\arguments{
+\item{obj}{any vector}
+
+\item{maxToShow}{numeric(1)}
+}
 \description{
 from Biobase ...
 }

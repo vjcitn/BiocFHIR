@@ -8,9 +8,9 @@
 #' tpat = process_Patient(tbun$Patient)
 #' head(names(tpat))
 #' tags = c("identifier.system3", "identifier.value3")
-#' tpat[tags]
-#' tags2 = grep("extension.extension", names(tpat), value=TRUE)
-#' tpat[tags2]
+#' tpat[tags,,FALSE]
+#' tags2 = grep("extension.extension", rownames(tpat), value=TRUE)
+#' tpat[tags2,,FALSE]
 #' @export
 process_Patient = function(Patient) {
  # Motivation: Patient bundle component has 'identifier' which
@@ -38,5 +38,9 @@ process_Patient = function(Patient) {
 # of a problem.  Simple solution is to unlist all Patient components
 #
   stopifnot(inherits(Patient, "BiocFHIR.Patient"))
-  do.call(data.frame, lapply(Patient, function(x) data.frame(t(unlist(x)))))
+  ans = do.call(data.frame, lapply(Patient, function(x) data.frame(t(unlist(x)))))
+  ans = data.frame(t(ans))
+  rownames(ans)[1]
+  names(ans) = c("value")
+  ans
 }
