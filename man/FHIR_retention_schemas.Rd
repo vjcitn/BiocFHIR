@@ -9,3 +9,6 @@ FHIR_retention_schemas()
 \description{
 collection of FHIR Resource components to be retained
 }
+\examples{
+FHIR_retention_schemas() # Oct 2022
+}

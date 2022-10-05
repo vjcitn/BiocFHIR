@@ -1,4 +1,6 @@
 #' FHIR Resource types recognized in package
+#' @examples
+#' FHIR_Resource_types() # Oct 2022
 #' @export
 FHIR_ResourceTypes = function() {
  c("AllergyIntolerance", "CarePlan", "CareTeam", 
@@ -9,6 +11,8 @@ FHIR_ResourceTypes = function() {
 }
 
 #' collection of FHIR Resource components to be retained
+#' @examples
+#' FHIR_retention_schemas() # Oct 2022
 #' @export
 FHIR_retention_schemas = function() {
 list(

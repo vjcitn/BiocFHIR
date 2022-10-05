@@ -12,3 +12,7 @@ build_proccond_igraph(listOfBundles)
 \description{
 build graph with patients, conditions and procedures
 }
+\examples{
+data(allin)
+build_proccond_igraph( allin )
+}

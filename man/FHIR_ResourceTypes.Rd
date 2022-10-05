@@ -9,3 +9,6 @@ FHIR_ResourceTypes()
 \description{
 FHIR Resource types recognized in package
 }
+\examples{
+FHIR_Resource_types() # Oct 2022
+}

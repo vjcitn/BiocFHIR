@@ -12,3 +12,7 @@ make_condition_graph(listOfProcessedBundles)
 \description{
 create graph with links from patients to conditions
 }
+\examples{
+data(allin)
+make_condition_graph(allin)
+}

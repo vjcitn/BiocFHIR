@@ -12,3 +12,9 @@ getHumanName(Patient)
 \description{
 get human name from a BiocFHIR.Patient instance
 }
+\examples{
+testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
+   package="BiocFHIR")
+tbun = process_fhir_bundle(testf)
+getHumanName(tbun$Patient)
+}

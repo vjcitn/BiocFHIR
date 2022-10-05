@@ -13,4 +13,7 @@ allin
 \description{
 collection of synthea FHIR documents ingested
 }
+\examples{
+allin[[1]]
+}
 \keyword{datasets}

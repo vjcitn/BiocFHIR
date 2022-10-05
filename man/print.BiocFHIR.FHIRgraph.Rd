@@ -14,3 +14,7 @@
 \description{
 show a combination of graph and patient attributes
 }
+\examples{
+data(allin)
+make_condition_graph(allin)
+}

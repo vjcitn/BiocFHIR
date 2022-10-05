@@ -1,19 +1,9 @@
-#process_CarePlan.R:process_CarePlan = function(CarePlan) {
-#process_Claim.R:process_Claim = function(Claim) {
-#process_Condition.R:process_Condition = function(Condition) {
-#process_Observation.R:process_Observation = function(Observation) {
-#processOthers.R:process_Encounter = function(Encounter) {
-#processOthers.R:process_AllergyIntolerance = function(AllergyIntolerance) {
-#processOthers.R:#process_Observation = function(Observation) {
-#processOthers.R:process_MedicationRequest = function(MedicationRequest) {
-#processOthers.R:process_Procedure = function(Procedure) {
-#processOthers.R:process_Immunization = function(Immunization) {
-#process_Patient.R:process_Patient = function(Patient) {
-#use_json.R:process_fhir_bundle = function(json_file) {
-
-
 #' table app
 #' @import shiny
+#' @examples
+#' if (interactive()) {
+#'  FHIRtabs()
+#' }
 #' @export
 FHIRtabs = function() {
   fns = make_test_json_set()
