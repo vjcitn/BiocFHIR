@@ -1,6 +1,6 @@
 #' FHIR Resource types recognized in package
 #' @examples
-#' FHIR_Resource_types() # Oct 2022
+#' FHIR_ResourceTypes() # Oct 2022
 #' @export
 FHIR_ResourceTypes = function() {
  c("AllergyIntolerance", "CarePlan", "CareTeam", 
@@ -23,7 +23,7 @@ list(
   Encounter = c("id", "type", "subject", "period", "serviceProvider", "class"),
   MedicationRequest = c("id", "subject", "status", "requester", "medicationCodeableConcept"),
   Observation = c("id", "subject", "code", "valueQuantity", "category",
-    "effectiveDateTime", "issued"),
+    "effectiveDateTime", "issued", "component"),  # blood pressures in component
   Procedure = c("id", "subject", "status", "performedPeriod", "code"),
   Patient = c("id", "identifier", "name", 
     "telecom", "gender", "birthDate", "address",   # dropped deceasedDateTime oct 2 2022

@@ -2,7 +2,8 @@
 % Please edit documentation in R/graphit.R
 \name{getHumanName}
 \alias{getHumanName}
-\title{get human name from a BiocFHIR.Patient instance}
+\title{get human name from a BiocFHIR.Patient instance
+importFrom methods new}
 \usage{
 getHumanName(Patient)
 }
@@ -11,6 +12,7 @@ getHumanName(Patient)
 }
 \description{
 get human name from a BiocFHIR.Patient instance
+importFrom methods new
 }
 \examples{
 testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",

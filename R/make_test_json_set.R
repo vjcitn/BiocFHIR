@@ -1,4 +1,5 @@
 #' produce 50 json FHIR files in a folder
+#' @importFrom utils unzip
 #' @param target character(1) a path, defaults to `jsontest` under `tempdir()`; the
 #' contents of synthfhir.zip, in inst/zip of BiocFHIR, will be deposted there.
 #' @param reuse logical(1) if TRUE, just use what is there, if folder already exists

@@ -9,3 +9,8 @@ FHIRtabs()
 \description{
 table app
 }
+\examples{
+if (interactive()) {
+ FHIRtabs()
+}
+}

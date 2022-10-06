@@ -1,5 +1,6 @@
 #' table app
 #' @import shiny
+#' @importFrom utils data packageDescription
 #' @examples
 #' if (interactive()) {
 #'  FHIRtabs()
@@ -109,7 +110,7 @@ an individual.  A 'fallback' schema usage may be adopted in future versions to c
          BiocFHIR::FHIR_retention_schemas()
          })
      output$network = visNetwork::renderVisNetwork({
-         data(allin)
+         data("allin", package="BiocFHIR")
          BiocFHIR::FHIR_retention_schemas()
          g = build_proccond_igraph( allin ) 
          display_proccond_igraph( g )
