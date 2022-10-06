@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BiocFHIR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.16</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.19</span>
       </span>
     </div>
 
@@ -39,6 +39,9 @@
     </li>
     <li>
       <a href="../articles/B_handling.html">Handling FHIR documents with BiocFHIR</a>
+    </li>
+    <li>
+      <a href="../articles/C_tables.html">Transforming FHIR documents to tables with BiocFHIR</a>
     </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
@@ -70,6 +73,16 @@
     </div>
 
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">FHIR_ResourceTypes</span><span class="op">(</span><span class="op">)</span> <span class="co"># Oct 2022</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "AllergyIntolerance"   "CarePlan"             "CareTeam"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "Claim"                "Condition"            "DiagnosticReport"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "Encounter"            "ExplanationOfBenefit" "Immunization"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "MedicationRequest"    "Observation"          "Organization"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "Patient"              "Practitioner"         "Procedure"           </span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

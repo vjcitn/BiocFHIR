@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BiocFHIR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.16</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.19</span>
       </span>
     </div>
 
@@ -39,6 +39,9 @@
     </li>
     <li>
       <a href="../articles/B_handling.html">Handling FHIR documents with BiocFHIR</a>
+    </li>
+    <li>
+      <a href="../articles/C_tables.html">Transforming FHIR documents to tables with BiocFHIR</a>
     </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
@@ -70,6 +73,53 @@
     </div>
 
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">FHIR_retention_schemas</span><span class="op">(</span><span class="op">)</span> <span class="co"># Oct 2022</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Condition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"            "onsetDateTime" "code"          "subject"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $AllergyIntolerance</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"            "onsetDateTime" "code"          "patient"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "category"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $CarePlan</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"       "activity" "subject"  "category"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Claim</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"             "provider"       "patient"        "billablePeriod"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "insurance"      "created"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Encounter</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"              "type"            "subject"         "period"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "serviceProvider" "class"          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $MedicationRequest</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"                        "subject"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "status"                    "requester"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "medicationCodeableConcept"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Observation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"                "subject"           "code"             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "valueQuantity"     "category"          "effectiveDateTime"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "issued"            "component"        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Procedure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"              "subject"         "status"          "performedPeriod"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "code"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Patient</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "id"                   "identifier"           "name"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [4] "telecom"              "gender"               "birthDate"           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "address"              "maritalStatus"        "multipleBirthBoolean"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [10] "communication"        "active"              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $Immunization</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "id"                 "patient"            "vaccineCode"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "occurrenceDateTime"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

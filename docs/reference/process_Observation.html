@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BiocFHIR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.16</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.19</span>
       </span>
     </div>
 
@@ -39,6 +39,9 @@
     </li>
     <li>
       <a href="../articles/B_handling.html">Handling FHIR documents with BiocFHIR</a>
+    </li>
+    <li>
+      <a href="../articles/C_tables.html">Transforming FHIR documents to tables with BiocFHIR</a>
     </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
@@ -94,7 +97,6 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35  e16a09b0-b01f-44cb-b301-d606729e4b38</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 36  9625b98f-bc58-453c-8664-f1fe185840a8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 37  690c8151-8c6b-4c1a-81d9-1071818592cc</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38  a91b50ea-2596-4f2c-9a3c-4d38054a89eb</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39  74b16bae-d8b1-4cf9-9281-ad3736348641</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40  911c76fe-c953-4bf2-ba74-d71b44399296</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 41  013b4774-cea5-437b-a6ea-1e0e0dcde8d9</span>
@@ -112,42 +114,36 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58  fdd0a486-5c96-4fca-baa8-12d138cb8c04</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 59  f6212802-2ac0-44a0-bb11-ef842784b386</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 60  fc0052b5-d384-4810-9050-3a7ac0438d8f</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61  1b0076b9-dd15-46cf-8094-cfb8d09a7f5a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 62  82022bc4-35b0-48d0-8bf5-b83443ee5510</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 67  28b3893b-74d4-4b4d-808e-a3b938aa3839</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 68  da50c832-6184-4428-9a07-840be794c5b5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69  9b24f946-e4ac-4bd5-9ad6-a62b9e46af87</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70  137b7d5d-07b2-4561-b17d-de9d7ddc1a19</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71  99f71a69-6728-410b-8f7e-888979d27888</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72  563bfad3-9754-4db5-b99b-b3a53e3c08e7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73  da1be38e-d046-41d7-a37b-e6279ccddc73</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 96  7641669b-af7b-4c05-8399-86fb626f58bb</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 97  1fa00b20-c558-473d-b7c2-148f3b5f1674</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 98  8f3c5d96-b2ac-4aba-8f73-a98dd748afb1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 99  aacb5d40-86e6-4862-8e21-d9c1fff7af3f</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 100 06409445-f75b-4e74-980e-a7e56966f6e1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101 a5747da9-af07-4ab1-ad2f-d4fac2fd8f43</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102 e5bd19ee-dae5-4ee2-9ce7-ae9d5befdb35</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 128 7b1bb919-8887-46a3-a565-4959cdbaeacb</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 129 868daac1-8be0-4599-a3bd-749f8eb3ebaf</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 130 5eb46e83-5fef-4be1-812d-88d2e6943507</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 131 2518ddc1-1031-4933-a53f-2dc01ca4be03</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 132 bb212899-1b1c-4cf3-b522-3a48de2e6880</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133 e98a1a52-6b4c-4412-8ef7-e2c92d2e0972</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 134 7f92011d-9e77-4036-9d6c-d2bed022131b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 142 5e7ceb8e-714d-40b0-aa18-81c042bea44f</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 143 beb21f06-0baa-4d25-9d16-15600be15a93</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 144 f1cee0ae-4290-400d-a129-52ed8c389be9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 145 d7e7ed01-8147-40a2-b41f-ebceb4c9aacf</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 146 594ace37-dc02-4ad7-a147-bf8e3e0535f2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147 cedfd069-2c83-4930-9675-879e6caaaa2a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 148 486708e1-86e8-41f3-a3bc-4e15101ab2bd</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 172 9eeb47f9-9841-4d36-bd49-dc6fc10a78e1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 173 a887a854-44db-4f61-8421-d8ebbc532077</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 174 8eb667b6-445a-4071-8a8b-ff648a51b06a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 175 c3c54f91-988f-44cb-8d97-2b94cbb7a78a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 176 b1e186ae-915e-433f-83ab-3d5cf70f843b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177 1155c32e-4489-4ee7-8452-27c48c3e03c5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178 4baab580-697d-4e91-92e9-0ee1f12fc695</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 179 5aa31e13-db5e-4296-bdc0-79ca8726e86e</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 180 b3b27615-4a4d-4196-94d2-a2f611cc0462</span>
@@ -165,51 +161,70 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 197 588d5f31-0cff-4218-a5a9-163e7067512e</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 198 03cb40a4-b3b8-4809-9f2e-2a63e174e397</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 199 d36859e1-0302-40d7-8e66-f7525ccbc0f3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200 98fb7c36-ffcc-48eb-8886-f329739d7fba</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 201 ce429f8d-ca57-4a4a-baa5-8638136c32a8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 224 ed5001ee-4da3-4d3b-8a31-86b102b1948b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 225 8840fcdf-0baf-4fc5-95d3-645a93337488</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 226 ab2bf929-5c60-4143-a992-24c792be0b59</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 227 851abed2-8cfb-4867-8a0c-eb56e51bb990</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 228 305bbe04-d5c2-44ed-b19f-ca239fe12fb0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229 5715dcaa-0e26-4ed1-a680-3b48cab9a646</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 230 58d98770-e70a-4ad3-a671-8ebce593279f</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 239 23acfa61-91b0-4e47-9197-cc27e95ff53b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 240 81861fd6-1e63-46a2-a568-7b5312f73b85</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 241 9833cf87-7597-47c1-8f04-efe8a0f0b2f0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 242 77192094-49de-4306-8eaa-be9b1908e831</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 243 dc04e378-c403-4c38-8221-f755652a7c67</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244 a8dd395b-3d65-45ce-8125-d0dcad7568d4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 245 33c36791-d4c1-4872-bd09-738c7eaeb9a3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 259 fe02b7c1-bd00-49e0-af8b-c5e3e2c79ce7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 260 9b250f10-1eb8-400b-af42-aaaa7be40def</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 261 a1ddd866-7641-49d4-84c1-7ca0bb23ff9f</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 262 318a7d1e-1348-4076-9d14-123f931be1a5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 263 2932c436-50cc-4ea1-8b37-c707f2f16aad</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264 6c3f661d-ccc8-46b2-b80c-1c8839ac74a9</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 265 d976cf46-4c24-420e-a754-8a014ffe162a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 271 0df9fcab-82dd-40b7-bf4d-c1090a4ee51b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 272 eafbe6e1-76ed-42c7-b928-0383f916f330</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 273 5e45300f-6c17-4de7-90ef-559a6f197b77</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 274 18267523-5f6f-40df-a9c7-f08a4e07db7c</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 275 c37d696f-0952-4bbf-a4a8-eb8f615e3e58</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276 075d7c87-13fd-47c6-b1a6-2b8685a2713d</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 277 088b77fe-a383-4c1f-807e-4a59624a5854</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 285 2644776f-787c-4645-ab8d-8f42131ad5bb</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 286 ba41dbdb-c2bf-438b-84aa-b0ec925ab0e2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 287 442b8599-c917-4e19-ac1b-fc05e6233b88</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 288 6f5e9a4e-535c-4409-81d6-9bf71970024f</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 289 7ee7d2f1-1dce-450a-92c4-f8a1d88b61c3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290 12f14bc9-4721-4f82-bc1e-fff52ff2451e</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 291 c56a1c31-bf2f-4f2a-974d-6e8f9c207fbf</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 298 f4960bfa-4b15-4e46-af0d-488f31c33822</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   a91b50ea-2596-4f2c-9a3c-4d38054a89eb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   a91b50ea-2596-4f2c-9a3c-4d38054a89eb</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   1b0076b9-dd15-46cf-8094-cfb8d09a7f5a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   1b0076b9-dd15-46cf-8094-cfb8d09a7f5a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   563bfad3-9754-4db5-b99b-b3a53e3c08e7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   563bfad3-9754-4db5-b99b-b3a53e3c08e7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   a5747da9-af07-4ab1-ad2f-d4fac2fd8f43</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   a5747da9-af07-4ab1-ad2f-d4fac2fd8f43</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   e98a1a52-6b4c-4412-8ef7-e2c92d2e0972</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  e98a1a52-6b4c-4412-8ef7-e2c92d2e0972</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  cedfd069-2c83-4930-9675-879e6caaaa2a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  cedfd069-2c83-4930-9675-879e6caaaa2a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  1155c32e-4489-4ee7-8452-27c48c3e03c5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  1155c32e-4489-4ee7-8452-27c48c3e03c5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  98fb7c36-ffcc-48eb-8886-f329739d7fba</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  98fb7c36-ffcc-48eb-8886-f329739d7fba</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  5715dcaa-0e26-4ed1-a680-3b48cab9a646</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18  5715dcaa-0e26-4ed1-a680-3b48cab9a646</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19  a8dd395b-3d65-45ce-8125-d0dcad7568d4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20  a8dd395b-3d65-45ce-8125-d0dcad7568d4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  6c3f661d-ccc8-46b2-b80c-1c8839ac74a9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22  6c3f661d-ccc8-46b2-b80c-1c8839ac74a9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23  075d7c87-13fd-47c6-b1a6-2b8685a2713d</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  075d7c87-13fd-47c6-b1a6-2b8685a2713d</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25  12f14bc9-4721-4f82-bc1e-fff52ff2451e</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26  12f14bc9-4721-4f82-bc1e-fff52ff2451e</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                 subject.reference code.coding.system</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 34  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 36  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 37  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 41  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
@@ -227,42 +242,36 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 59  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 60  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 62  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 67  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 68  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 96  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 97  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 98  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 99  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 100 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 128 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 129 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 130 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 131 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 132 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 134 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 142 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 143 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 144 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 145 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 146 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 148 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 172 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 173 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 174 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 175 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 176 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 179 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 180 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
@@ -280,51 +289,70 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 197 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 198 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 199 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 201 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 224 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 225 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 226 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 227 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 228 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 230 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 239 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 240 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 241 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 242 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 243 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 245 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 259 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 260 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 261 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 262 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 263 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 265 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 271 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 272 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 273 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 274 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 275 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 277 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 285 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 286 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 287 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 288 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 289 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 291 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 298 urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26  urn:uuid:eedf9986-9cf8-4e90-bf68-12a6dd9a31c2   http://loinc.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     code.coding.code</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33            8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 34           72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35           29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 36           39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 37           59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38           55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39            6690-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40             789-8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 41             718-7</span>
@@ -342,42 +370,36 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58           29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 59           39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 60           59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61           55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 62           72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 67            8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 68           72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69           29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70           39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71           59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72           55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73           72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 96            8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 97           72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 98           29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 99           39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 100          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 128           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 129          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 130          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 131          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 132          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 134          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 142           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 143          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 144          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 145          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 146          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 148          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 172           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 173          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 174          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 175          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 176          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178           6690-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 179            789-8</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 180            718-7</span>
@@ -395,51 +417,70 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 197          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 198          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 199          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 201          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 224           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 225          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 226          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 227          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 228          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 230          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 239           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 240          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 241          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 242          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 243          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 245          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 259           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 260          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 261          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 262          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 263          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 265          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 271           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 272          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 273          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 274          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 275          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 277          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 285           8302-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 286          72514-3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 287          29463-7</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 288          39156-5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 289          59576-9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290          55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 291          72166-2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 298          69453-9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9            55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25           55284-4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26           55284-4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                          code.coding.display</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33                                                               Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 34             Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35                                                               Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 36                                                           Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 37                     Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38                                                            Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39                         Leukocytes [#/volume] in Blood by Automated count</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40                       Erythrocytes [#/volume] in Blood by Automated count</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 41                                         Hemoglobin [Mass/volume] in Blood</span>
@@ -457,42 +498,36 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58                                                               Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 59                                                           Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 60                     Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61                                                            Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 62                                               Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 67                                                               Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 68             Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69                                                               Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70                                                           Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71                     Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72                                                            Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73                                               Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 96                                                               Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 97             Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 98                                                               Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 99                                                           Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 100                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 128                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 129            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 130                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 131                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 132                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 134                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 142                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 143            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 144                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 145                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 146                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 148                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 172                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 173            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 174                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 175                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 176                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178                        Leukocytes [#/volume] in Blood by Automated count</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 179                      Erythrocytes [#/volume] in Blood by Automated count</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 180                                        Hemoglobin [Mass/volume] in Blood</span>
@@ -510,51 +545,70 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 197                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 198                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 199                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 201                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 224                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 225            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 226                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 227                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 228                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 230                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 239                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 240            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 241                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 242                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 243                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 245                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 259                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 260            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 261                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 262                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 263                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 265                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 271                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 272            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 273                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 274                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 275                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 277                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 285                                                              Body Height</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 286            Pain severity - 0-10 verbal numeric rating [Score] - Reported</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 287                                                              Body Weight</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 288                                                          Body Mass Index</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 289                    Body mass index (BMI) [Percentile] Per age and gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290                                                           Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 291                                              Tobacco smoking status NHIS</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 298                        Cause of Death [US Standard Certificate of Death]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                   Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                    Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                   Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                    Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                   Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                    Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                   Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                                    Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                                   Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                                                   Systolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                                                  Diastolic Blood Pressure</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                                                   Systolic Blood Pressure</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     valueQuantity.value valueQuantity.unit      valueQuantity.system</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33          115.1299086                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 34            0.5095500            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35           22.1132051                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 36           16.6830470              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 37           78.5156581                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38                   NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39            8.6842718            10*3/uL http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40            4.4991114            10*6/uL http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 41           12.5191333               g/dL http://unitsofmeasure.org</span>
@@ -572,42 +626,36 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58           25.3852385                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 59           17.1921616              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 60           80.8867927                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61                   NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 62                   NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 67          127.6389989                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 68            0.7826692            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69           28.9185156                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70           17.7504439              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71           81.7353053                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72                   NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73                   NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 96          133.7419595                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 97            0.3494132            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 98           32.7486569                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 99           18.3087262              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 100          81.2050558                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 128         138.8314139                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 129           3.4349551            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 130          36.3442741                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 131          18.8564748              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 132          79.9408201                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 134                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 142         138.8314139                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 143           2.7158927            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 144          36.3442741                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 145          18.8564748              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 146          79.9408201                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 148                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 172         143.3191983                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 173           0.6674318            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 174          40.7239421                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 175          19.8262725              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 176          83.0438533                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178           7.0617650            10*3/uL http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 179           5.2542715            10*6/uL http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 180          13.9524377               g/dL http://unitsofmeasure.org</span>
@@ -625,51 +673,70 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 197          41.1477289                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 198          19.9157809              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 199          83.2022415                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 201                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 224         149.3178474                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 225           2.8462028            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 226          46.5422889                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 227          20.8748949              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 228          84.1353202                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 230                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 239         150.3875442                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 240           3.4065984            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 241          47.4892903                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 242          20.9977105              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 243          84.0509261                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 245                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 259         156.4194178                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 260           1.1908458            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 261          52.3575057                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 262          21.3992040              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 263          82.3427755                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 265                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 271         164.7449393                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 272           1.4464437            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 273          58.7573699                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 274          21.6490170              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 275          78.0663162                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 277                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 285         170.5288757                 cm http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 286           2.6526610            {score} http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 287          64.2981597                 kg http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 288          22.1107099              kg/m2 http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 289          75.6173772                  % http://unitsofmeasure.org</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 291                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 298                  NA               &lt;NA&gt;                      &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1            79.4276796             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           110.7472482             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3            75.2178881             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4           102.9110806             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5            84.7286213             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6           111.3428941             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7            82.9834678             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8           122.2521729             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9            77.8920186             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10          113.1975311             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11           86.3217901             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12          130.6542105             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13           73.1051550             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14          119.9943207             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15           83.5885758             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16          117.6309502             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17           79.1753059             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18          115.7009316             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19           82.2878339             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20          122.6703082             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21           83.1742751             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22          107.9534075             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23           75.8339031             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24          117.5875729             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25           76.7678405             mm[Hg] http://unitsofmeasure.org</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26          114.4527411             mm[Hg] http://unitsofmeasure.org</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     valueQuantity.code         effectiveDateTime                        issued</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 33                  cm 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 34             {score} 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 35                  kg 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 36               kg/m2 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 37                   % 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38                &lt;NA&gt; 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 39             10*3/uL 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 40             10*6/uL 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 41                g/dL 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
@@ -687,42 +754,36 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 58                  kg 1978-06-14T07:25:09-04:00 1978-06-14T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 59               kg/m2 1978-06-14T07:25:09-04:00 1978-06-14T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 60                   % 1978-06-14T07:25:09-04:00 1978-06-14T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 61                &lt;NA&gt; 1978-06-14T07:25:09-04:00 1978-06-14T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 62                &lt;NA&gt; 1978-06-14T07:25:09-04:00 1978-06-14T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 67                  cm 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 68             {score} 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 69                  kg 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 70               kg/m2 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 71                   % 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 72                &lt;NA&gt; 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 73                &lt;NA&gt; 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 96                  cm 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 97             {score} 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 98                  kg 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 99               kg/m2 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 100                  % 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 101               &lt;NA&gt; 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 102               &lt;NA&gt; 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 128                 cm 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 129            {score} 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 130                 kg 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 131              kg/m2 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 132                  % 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 133               &lt;NA&gt; 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 134               &lt;NA&gt; 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 142                 cm 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 143            {score} 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 144                 kg 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 145              kg/m2 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 146                  % 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 147               &lt;NA&gt; 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 148               &lt;NA&gt; 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 172                 cm 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 173            {score} 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 174                 kg 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 175              kg/m2 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 176                  % 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 177               &lt;NA&gt; 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 178            10*3/uL 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 179            10*6/uL 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 180               g/dL 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
@@ -740,44 +801,64 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 197                 kg 1982-07-07T07:25:09-04:00 1982-07-07T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 198              kg/m2 1982-07-07T07:25:09-04:00 1982-07-07T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 199                  % 1982-07-07T07:25:09-04:00 1982-07-07T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 200               &lt;NA&gt; 1982-07-07T07:25:09-04:00 1982-07-07T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 201               &lt;NA&gt; 1982-07-07T07:25:09-04:00 1982-07-07T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 224                 cm 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 225            {score} 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 226                 kg 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 227              kg/m2 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 228                  % 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 229               &lt;NA&gt; 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 230               &lt;NA&gt; 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 239                 cm 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 240            {score} 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 241                 kg 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 242              kg/m2 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 243                  % 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 244               &lt;NA&gt; 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 245               &lt;NA&gt; 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 259                 cm 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 260            {score} 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 261                 kg 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 262              kg/m2 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 263                  % 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 264               &lt;NA&gt; 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 265               &lt;NA&gt; 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 271                 cm 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 272            {score} 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 273                 kg 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 274              kg/m2 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 275                  % 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 276               &lt;NA&gt; 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 277               &lt;NA&gt; 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 285                 cm 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 286            {score} 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 287                 kg 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 288              kg/m2 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 289                  % 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 290               &lt;NA&gt; 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 291               &lt;NA&gt; 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 298               &lt;NA&gt; 1987-05-20T07:25:09-04:00 1987-05-20T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1                 &lt;NA&gt; 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                 &lt;NA&gt; 1977-06-08T07:25:09-04:00 1977-06-08T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                 &lt;NA&gt; 1978-06-14T07:25:09-04:00 1978-06-14T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                 &lt;NA&gt; 1978-06-14T07:25:09-04:00 1978-06-14T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                 &lt;NA&gt; 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                 &lt;NA&gt; 1979-06-20T07:25:09-04:00 1979-06-20T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                 &lt;NA&gt; 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                 &lt;NA&gt; 1980-06-25T07:25:09-04:00 1980-06-25T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                 &lt;NA&gt; 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                &lt;NA&gt; 1981-07-01T07:25:09-04:00 1981-07-01T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                &lt;NA&gt; 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                &lt;NA&gt; 1981-07-15T07:25:09-04:00 1981-07-15T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                &lt;NA&gt; 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                &lt;NA&gt; 1982-06-16T07:25:09-04:00 1982-06-16T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                &lt;NA&gt; 1982-07-07T07:25:09-04:00 1982-07-07T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                &lt;NA&gt; 1982-07-07T07:25:09-04:00 1982-07-07T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                &lt;NA&gt; 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                &lt;NA&gt; 1983-07-13T07:25:09-04:00 1983-07-13T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                &lt;NA&gt; 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                &lt;NA&gt; 1983-08-31T07:25:09-04:00 1983-08-31T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                &lt;NA&gt; 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                &lt;NA&gt; 1984-07-18T07:25:09-04:00 1984-07-18T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23                &lt;NA&gt; 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24                &lt;NA&gt; 1985-07-24T07:25:09-04:00 1985-07-24T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                &lt;NA&gt; 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                &lt;NA&gt; 1986-07-30T07:25:09-04:00 1986-07-30T07:25:09.496-04:00</span>
 </code></pre></div>
     </div>
   </div>
