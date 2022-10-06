@@ -20,6 +20,7 @@ suppressMessages({
 library(BiocFHIR)
 library(DT)
 library(jsonlite)
+library(graph)
 })
 })
 ```
@@ -84,6 +85,53 @@ The edges emanating from the node corresponding to this patient are conditions t
 been recorded.  Edges are retrieved using the `edgeL` method.
 
 ```{r lke}
+library(graph)
 nodes(g$graph)[edgeL(g$graph)[["Ankunding277D'Amore443"]]$edges]
 ```
 
+# Adding procedures to the graph
+
+We have been unable so far to see how procedures
+can be linked directly to conditions, except by
+association with a given patient.  We
+add the procedure information as follows:
+
+```{r showa}
+g = add_procedures(g, allin)
+g
+```
+
+Data on additional resources can be added using
+the methods of `add_procedures`.  This
+will be carried out in future
+releases.
+
+# Interactive visualization of the graph
+
+A visNetwork widget can be produced directly
+from a list of ingested bundles.  This display can
+be zoomed and dragged.  Procedures are green, patients
+are blue, conditions are red.
+
+```{r morep}
+display_proccond_igraph( build_proccond_igraph( allin ))
+```
+
+# Conclusions
+
+This collection of vignettes shows some approaches to
+working with FHIR R4 JSON using R.  It is very likely that
+a new collection of bundles obtained from a different source
+would not be properly ingested or transformed by the code
+present in this version of BiocFHIR.  Future extensions of
+the package will employ direct analysis of JSON structures
+to identify data values and relationships, that should be more
+adaptable to diverse collections of documents.
+
+Relationships among resources may be represented in many
+different ways.  This survey of the resources in the synthea
+bundles is surely limited, perhaps even with respect to the
+information available in the bundles.  FHIR experts are invited
+to identify gaps in this implementation.  We anticipate
+considerable additional work needed to deal with other contexts
+such as research studies.
