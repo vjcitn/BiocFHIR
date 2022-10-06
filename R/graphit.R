@@ -5,7 +5,7 @@
 
 
 #' get human name from a BiocFHIR.Patient instance
-#' importFrom methods new
+#' @importFrom methods new
 #' @rawNamespace import("graph", except=c("union", "edges", "intersection", "degree"))
 #' @param Patient BiocFHIR.Patient instance
 #' @examples
