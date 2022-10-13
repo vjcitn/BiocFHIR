@@ -135,3 +135,10 @@ information available in the bundles.  FHIR experts are invited
 to identify gaps in this implementation.  We anticipate
 considerable additional work needed to deal with other contexts
 such as research studies.
+
+# Session information
+
+```{r lksess}
+sessionInfo()
+```
+

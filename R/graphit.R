@@ -10,14 +10,14 @@
 #' @param Patient BiocFHIR.Patient instance
 #' @return string with name components concatenated
 #' @examples
-#' testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
+#' testf <- system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
 #'    package="BiocFHIR")
-#' tbun = process_fhir_bundle(testf)
+#' tbun <- process_fhir_bundle(testf)
 #' getHumanName(tbun$Patient)
 #' @export
-getHumanName = function(Patient) { 
+getHumanName <- function(Patient) { 
    stopifnot(inherits(Patient, "BiocFHIR.Patient"))
-   ul = unlist(Patient);   # unpleasant to avoid "process_Patient" but simpler?
+   ul <- unlist(Patient);   # unpleasant to avoid "process_Patient" but simpler?
    if (!is.na(ul["name.family1"]))
      return(paste0(ul["name.family1"], ul["name.family2"]))
    else  return(paste0(ul["name.given"], ul["name.family"]))
@@ -30,32 +30,32 @@ getHumanName = function(Patient) {
 #' data("allin")
 #' make_condition_graph(allin)
 #' @export
-make_condition_graph = function(listOfProcessedBundles) {
+make_condition_graph <- function(listOfProcessedBundles) {
 
- patients = sapply(listOfProcessedBundles, function(x) getHumanName(x$Patient))
- condg = new("graphNEL", nodes=patients)
- condg@graphData = list(edgemode="directed")
+ patients <- vapply(listOfProcessedBundles, function(x) getHumanName(x$Patient), character(1))
+ condg <- new("graphNEL", nodes=patients)
+ condg@graphData <- list(edgemode="directed")
 
- nn = lapply( listOfProcessedBundles, function(x) {
-    curn = getHumanName(x$Patient)
-    curconds = try(process_Condition(x$Condition)) #$code.coding.display)
+ nn <- lapply( listOfProcessedBundles, function(x) {
+    curn <- getHumanName(x$Patient)
+    curconds <- try(process_Condition(x$Condition)) #$code.coding.display)
     if (inherits(curconds, "try-error")) return(curconds)
-    curconds = curconds$code.coding.display
+    curconds <- curconds$code.coding.display
 #    if (!is.null(curconds)) {
-    newnodes = setdiff(curconds, nodes(condg))
+    newnodes <- setdiff(curconds, nodes(condg))
     if (length(newnodes)>0) {
-      condg = addNode(newnodes, condg)
+      condg <- addNode(newnodes, condg)
       }
    condg <<- addEdge( curn, curconds, condg)  # must use current conditions
    condg
 #    }
     })
- errs = sapply(nn, inherits, "try-error")
- haserr = sum(errs)
+ errs <- vapply(nn, function(x) inherits(x, "try-error"), logical(1))
+ haserr <- sum(errs)
  if (haserr > 0) message("some bundles had no Condition component")
- conditions = setdiff(nodes(condg), patients) # hokey
- ans = list(graph=condg, patients=patients, conditions=conditions)
- class(ans) = "BiocFHIR.FHIRgraph"
+ conditions <- setdiff(nodes(condg), patients) # hokey
+ ans <- list(graph=condg, patients=patients, conditions=conditions)
+ class(ans) <- "BiocFHIR.FHIRgraph"
  ans
 }
 
@@ -67,7 +67,7 @@ make_condition_graph = function(listOfProcessedBundles) {
 #' data("allin")
 #' make_condition_graph(allin)
 #' @export
-print.BiocFHIR.FHIRgraph = function(x, ...) {
+print.BiocFHIR.FHIRgraph <- function(x, ...) {
  cat("BiocFHIR.FHIRgraph instance.\n")
  print(x$graph)
  cat(sprintf(" %d patients, %d conditions\n", length(x$patients), length(x$conditions)))
@@ -80,30 +80,30 @@ print.BiocFHIR.FHIRgraph = function(x, ...) {
 #' @return instance of BiocFHIR.FHIRgraph
 #' @examples
 #' data("allin")
-#' g = make_condition_graph(allin)
-#' g = add_procedures(g, allin)
+#' g <- make_condition_graph(allin)
+#' g <- add_procedures(g, allin)
 #' g
 #' @export
-add_procedures = function(fhirgraph, listOfProcessedBundles) {
+add_procedures <- function(fhirgraph, listOfProcessedBundles) {
  stopifnot(inherits(fhirgraph, "BiocFHIR.FHIRgraph"))
- curg = fhirgraph$graph
- nn = lapply( listOfProcessedBundles, function(x) {
-    curn = getHumanName(x$Patient)
-    curprocs = try(process_Procedure(x$Procedure)) # $code.display)
+ curg <- fhirgraph$graph
+ nn <- lapply( listOfProcessedBundles, function(x) {
+    curn <- getHumanName(x$Patient)
+    curprocs <- try(process_Procedure(x$Procedure)) # $code.display)
     if (inherits(curprocs, "try-error")) return(curprocs)
-    curprocs = curprocs$code.display
-    newnodes = setdiff(curprocs, nodes(curg))
+    curprocs <- curprocs$code.display
+    newnodes <- setdiff(curprocs, nodes(curg))
     if (length(newnodes)>0) {
-        curg = addNode(newnodes, curg)
+        curg <- addNode(newnodes, curg)
         }
    curg <<- addEdge( curn, curprocs, curg)
     curg
     })
- errs = sapply(nn, inherits, "try-error")
- haserr = sum(errs)
+ errs <- vapply(nn, function(x) inherits(x, "try-error"), logical(1))
+ haserr <- sum(errs)
  if (haserr > 0) message("some bundles had no Procedure component")
- fhirgraph$procedures = setdiff(nodes(curg), nodes(fhirgraph$graph))
- fhirgraph$graph = curg
+ fhirgraph$procedures <- setdiff(nodes(curg), nodes(fhirgraph$graph))
+ fhirgraph$graph <- curg
  fhirgraph
 }
 
@@ -112,13 +112,13 @@ add_procedures = function(fhirgraph, listOfProcessedBundles) {
 #library(parallel)
 #library(igraph)
 #options(mc.cores=4)
-##allin = mclapply(dir(patt="json$"), process_fhir_bundle)
+##allin <- mclapply(dir(pattern="json$"), process_fhir_bundle)
 #load("allin.rda")
-#condg = make_condition_graph( allin )
-#condg = add_procedures( condg, allin )
+#condg <- make_condition_graph( allin )
+#condg <- add_procedures( condg, allin )
 #condg
 #
-#ii = igraph.from.graphNEL(condg$graph)
+#ii <- igraph.from.graphNEL(condg$graph)
 
 
 
@@ -130,13 +130,13 @@ add_procedures = function(fhirgraph, listOfProcessedBundles) {
 #' data("allin")
 #' build_proccond_igraph( allin )
 #' @export
-build_proccond_igraph = function( listOfBundles ) {
- condg = make_condition_graph( listOfBundles )
- condg = add_procedures( condg, listOfBundles )
- ii = igraph.from.graphNEL( condg$graph )
- V(ii)$color[ names(V(ii)) %in% condg$conditions ] = "red"
- V(ii)$color[ names(V(ii)) %in% condg$procedures ] = "green"
- V(ii)$color[ names(V(ii)) %in% condg$patients ] = "blue"
+build_proccond_igraph <- function( listOfBundles ) {
+ condg <- make_condition_graph( listOfBundles )
+ condg <- add_procedures( condg, listOfBundles )
+ ii <- igraph.from.graphNEL( condg$graph )
+ V(ii)$color[ names(V(ii)) %in% condg$conditions ] <- "red"
+ V(ii)$color[ names(V(ii)) %in% condg$procedures ] <- "green"
+ V(ii)$color[ names(V(ii)) %in% condg$patients ] <- "blue"
  ii
 }
 
@@ -146,11 +146,11 @@ build_proccond_igraph = function( listOfBundles ) {
 #' @return visIGraph instance
 #' @examples
 #' data("allin")
-#' g = build_proccond_igraph( allin ) 
+#' g <- build_proccond_igraph( allin ) 
 #' if (interactive()) {
 #'  display_proccond_igraph( g )
 #' }
 #' @export
-display_proccond_igraph = function( igraph ) {
+display_proccond_igraph <- function( igraph ) {
  visIgraph( igraph )
 }

@@ -82,8 +82,8 @@ selectSome = function (obj, maxToShow = 5)
         maxToShow <- maxToShow - 1
         bot <- ceiling(maxToShow/2)
         top <- len - (maxToShow - bot - 1)
-        nms <- obj[c(1:bot, top:len)]
-        c(as.character(nms[1:bot]), "...", as.character(nms[-c(1:bot)]))
+        nms <- obj[c(seq_len(bot), top:len)]
+        c(as.character(nms[seq_len(bot)]), "...", as.character(nms[-c(seq_len(bot))]))
     }
     else if (is.factor(obj)) 
         as.character(obj)

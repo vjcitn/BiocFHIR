@@ -16,8 +16,8 @@ data.frame
 extract information from retained fields in Observation component of FHIR Bundle, produce simple data.frame
 }
 \examples{
-testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
+testf <- system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
    package="BiocFHIR")
-tbun = process_fhir_bundle(testf)
+tbun <- process_fhir_bundle(testf)
 process_Observation(tbun$Observation)
 }

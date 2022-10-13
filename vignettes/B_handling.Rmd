@@ -133,3 +133,10 @@ The fields collected in `process_Condition` are specified
 in `FHIR_retention_schemas()`.  Eventually this will
 need to become a user-specified element of ingestion and
 transformation.
+
+# Session information
+
+```{r lksess}
+sessionInfo()
+```
+

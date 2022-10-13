@@ -19,6 +19,6 @@ a vector of paths to FHIR JSON, invisibly
 produce 50 json FHIR files in a folder
 }
 \examples{
-z = make_test_json_set()
+z <- make_test_json_set()
 z[1:3]
 }

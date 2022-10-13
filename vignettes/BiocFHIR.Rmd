@@ -107,3 +107,10 @@ sapply(myl,length)
 ```
 We see with the last command that documents can have different numbers
 of components present.
+
+# Session information
+
+```{r lksess}
+sessionInfo()
+```
+
