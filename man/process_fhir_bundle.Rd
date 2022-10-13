@@ -9,6 +9,9 @@ process_fhir_bundle(json_file)
 \arguments{
 \item{json_file}{character(1) path to text in JSON format}
 }
+\value{
+instance of FHIR.bundle, extending list
+}
 \description{
 process a bundle of FHIR R4 JSON
 }

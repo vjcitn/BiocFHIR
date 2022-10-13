@@ -9,6 +9,9 @@ getHumanName(Patient)
 \arguments{
 \item{Patient}{BiocFHIR.Patient instance}
 }
+\value{
+string with name components concatenated
+}
 \description{
 get human name from a BiocFHIR.Patient instance
 }

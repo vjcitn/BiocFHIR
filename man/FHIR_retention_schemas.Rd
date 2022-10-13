@@ -6,6 +6,9 @@
 \usage{
 FHIR_retention_schemas()
 }
+\value{
+list of vectors of strings
+}
 \description{
 collection of FHIR Resource components to be retained
 }

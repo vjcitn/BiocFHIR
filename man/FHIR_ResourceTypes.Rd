@@ -6,6 +6,9 @@
 \usage{
 FHIR_ResourceTypes()
 }
+\value{
+vector of strings
+}
 \description{
 FHIR Resource types recognized in package
 }

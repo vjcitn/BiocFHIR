@@ -11,6 +11,9 @@
 
 \item{\dots}{not used}
 }
+\value{
+print method
+}
 \description{
 print method
 }

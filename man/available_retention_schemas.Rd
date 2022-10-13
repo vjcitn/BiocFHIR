@@ -6,6 +6,9 @@
 \usage{
 available_retention_schemas()
 }
+\value{
+character vector
+}
 \description{
 list available 'retention schemas'
 }

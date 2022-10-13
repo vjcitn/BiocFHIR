@@ -11,10 +11,13 @@
 
 \item{\dots}{not used}
 }
+\value{
+print method
+}
 \description{
 show a combination of graph and patient attributes
 }
 \examples{
-data(allin)
+data("allin")
 make_condition_graph(allin)
 }

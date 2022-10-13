@@ -1,5 +1,5 @@
 
-This is a collection of FHIR records in JSON format.
+This is a collection of 30 FHIR records in JSON format.
 
 The data were retrieved from https://synthetichealth.github.io/synthea-sample-data/downloads/synthea_sample_data_fhir_r4_sep2019.zip
 

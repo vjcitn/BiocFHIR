@@ -1,6 +1,7 @@
 #' process a bundle of FHIR R4 JSON
 #' @importFrom jsonlite fromJSON
 #' @param json_file character(1) path to text in JSON format
+#' @return instance of FHIR.bundle, extending list
 #' @examples
 #' testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
 #'    package="BiocFHIR")
@@ -48,6 +49,7 @@ process_fhir_bundle = function(json_file) {
 #' print method
 #' @param x BiocFHIR FHIR.bundle instance
 #' @param \dots not used
+#' @return print method
 #' @export
 print.FHIR.bundle = function(x, ...) {
   cat("BiocFHIR FHIR.bundle instance.\n")
@@ -59,6 +61,7 @@ print.FHIR.bundle = function(x, ...) {
 
 
 #' list available 'retention schemas'
+#' @return character vector
 #' @examples
 #' available_retention_schemas()
 #' @export
@@ -67,6 +70,7 @@ available_retention_schemas = function()
 
 
 #' from Biobase ...
+#' @return character vector
 #' @param obj any vector
 #' @param maxToShow numeric(1)
 selectSome = function (obj, maxToShow = 5) 

@@ -9,11 +9,14 @@ display_proccond_igraph(igraph)
 \arguments{
 \item{igraph}{instance of igraph produced by `build_procond_igraph`}
 }
+\value{
+visIGraph instance
+}
 \description{
 make network visualization
 }
 \examples{
-data(allin)
+data("allin")
 g = build_proccond_igraph( allin ) 
 if (interactive()) {
  display_proccond_igraph( g )
