@@ -11,6 +11,9 @@ selectSome(obj, maxToShow = 5)
 
 \item{maxToShow}{numeric(1)}
 }
+\value{
+character vector
+}
 \description{
 from Biobase ...
 }

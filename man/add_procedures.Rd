@@ -11,11 +11,14 @@ add_procedures(fhirgraph, listOfProcessedBundles)
 
 \item{listOfProcessedBundles}{list}
 }
+\value{
+instance of BiocFHIR.FHIRgraph
+}
 \description{
 update a fhir graph on patients and conditions with procedures
 }
 \examples{
-data(allin)
+data("allin")
 g = make_condition_graph(allin)
 g = add_procedures(g, allin)
 g

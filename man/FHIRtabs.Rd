@@ -6,6 +6,9 @@
 \usage{
 FHIRtabs()
 }
+\value{
+No value returned.
+}
 \description{
 table app
 }

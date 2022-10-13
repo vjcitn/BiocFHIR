@@ -1,4 +1,5 @@
 #' FHIR Resource types recognized in package
+#' @return vector of strings
 #' @examples
 #' FHIR_ResourceTypes() # Oct 2022
 #' @export
@@ -11,6 +12,7 @@ FHIR_ResourceTypes = function() {
 }
 
 #' collection of FHIR Resource components to be retained
+#' @return list of vectors of strings
 #' @examples
 #' FHIR_retention_schemas() # Oct 2022
 #' @export

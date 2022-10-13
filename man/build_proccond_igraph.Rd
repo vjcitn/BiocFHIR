@@ -9,10 +9,13 @@ build_proccond_igraph(listOfBundles)
 \arguments{
 \item{listOfBundles}{list of processed FHIR bundles, processed with `process_fhir_bundle`}
 }
+\value{
+instance of visIgraph from visNetworks
+}
 \description{
 build graph with patients, conditions and procedures
 }
 \examples{
-data(allin)
+data("allin")
 build_proccond_igraph( allin )
 }
