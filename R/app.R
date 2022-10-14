@@ -11,8 +11,8 @@ FHIRtabs <- function() {
   fns <- make_test_json_set()
   zn <- gsub(".*jsontest/", "", fns)
   zns <- strsplit(zn, "_")
-  fn <- vapply(zns, "[", 1, character(1))
-  ln <- vapply(zns, "[", 2, character(1))
+  fn <- vapply(zns, function(x) x[1], character(1))
+  ln <- vapply(zns, function(x) x[2], character(1))
   folks <- paste(fn, ln, sep="_")
 
   names(fns) <- folks

@@ -1,6 +1,6 @@
 Package: BiocFHIR
 Title: Illustration of FHIR ingestion and transformation using R
-Version: 0.99.4
+Version: 0.99.5
 Date: 2022-10-06
 Authors@R: 
     c(person(
@@ -23,7 +23,7 @@ Imports:
     tidyr, visNetwork, igraph, utils, methods
 Suggests: knitr, testthat
 VignetteBuilder: knitr
-biocViews: Infrastructure
+biocViews: Infrastructure, DataImport, DataRepresentation
 RoxygenNote: 7.2.1
 URL: https://github.com/vjcitn/BiocFHIR
 BugReports: https://github.com/vjcitn/BiocFHIR/issues

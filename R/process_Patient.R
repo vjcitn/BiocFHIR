@@ -41,5 +41,6 @@ process_Patient <- function(Patient) {
   ans <- do.call(data.frame, lapply(Patient, function(x) data.frame(t(unlist(x)))))
   ans <- data.frame(t(ans))
   names(ans) <- c("value")
+  rownames(ans)[1] = "id"
   ans
 }
