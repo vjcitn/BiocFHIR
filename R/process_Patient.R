@@ -2,17 +2,17 @@
 #' @param Patient element of FHIR.bundle instance
 #' @return data.frame
 #' @examples
-#' testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
+#' testf <- system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
 #'    package="BiocFHIR")
-#' tbun = process_fhir_bundle(testf)
-#' tpat = process_Patient(tbun$Patient)
+#' tbun <- process_fhir_bundle(testf)
+#' tpat <- process_Patient(tbun$Patient)
 #' head(names(tpat))
-#' tags = c("identifier.system3", "identifier.value3")
+#' tags <- c("identifier.system3", "identifier.value3")
 #' tpat[tags,,FALSE]
-#' tags2 = grep("extension.extension", rownames(tpat), value=TRUE)
+#' tags2 <- grep("extension.extension", rownames(tpat), value=TRUE)
 #' tpat[tags2,,FALSE]
 #' @export
-process_Patient = function(Patient) {
+process_Patient <- function(Patient) {
  # Motivation: Patient bundle component has 'identifier' which
  # comes as a list of length 1, which has embedded data.frame
 # Example
@@ -38,9 +38,9 @@ process_Patient = function(Patient) {
 # of a problem.  Simple solution is to unlist all Patient components
 #
   stopifnot(inherits(Patient, "BiocFHIR.Patient"))
-  ans = do.call(data.frame, lapply(Patient, function(x) data.frame(t(unlist(x)))))
-  ans = data.frame(t(ans))
-  rownames(ans)[1]
-  names(ans) = c("value")
+  ans <- do.call(data.frame, lapply(Patient, function(x) data.frame(t(unlist(x)))))
+  ans <- data.frame(t(ans))
+  names(ans) <- c("value")
+  rownames(ans)[1] = "id"
   ans
 }

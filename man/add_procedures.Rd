@@ -19,7 +19,7 @@ update a fhir graph on patients and conditions with procedures
 }
 \examples{
 data("allin")
-g = make_condition_graph(allin)
-g = add_procedures(g, allin)
+g <- make_condition_graph(allin)
+g <- add_procedures(g, allin)
 g
 }

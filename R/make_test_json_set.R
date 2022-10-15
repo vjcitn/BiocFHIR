@@ -5,20 +5,16 @@
 #' @param reuse logical(1) if TRUE, just use what is there, if folder already exists
 #' @return a vector of paths to FHIR JSON, invisibly
 #' @examples
-#' z = make_test_json_set()
+#' z <- make_test_json_set()
 #' z[1:3]
 #' @export
-make_test_json_set = function(target=paste0(tempdir(), "/jsontest"), reuse=TRUE) {
+make_test_json_set <- function(target=paste0(tempdir(), "/jsontest"), reuse=TRUE) {
   if (dir.exists(target)) {
     if (!reuse) stop("target folder already exists")
     }
   else dir.create(target)
-  file.copy(system.file("zip/synthfhir.zip", package="BiocFHIR"), target)
-  od = getwd()
-  setwd(target)
-  unzip("synthfhir.zip")
-  ans = dir(target, full=TRUE, patt="json$")
-  setwd(od)
+  unzip(system.file("zip/synthfhir.zip", package="BiocFHIR"), exdir=target)
+  ans <- dir(target, full.names=TRUE, pattern="json$")
   invisible(ans)
 }
   

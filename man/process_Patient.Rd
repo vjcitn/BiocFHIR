@@ -16,13 +16,13 @@ data.frame
 flatten information in Patient component of a bundle to a one-line data.frame
 }
 \examples{
-testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
+testf <- system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
    package="BiocFHIR")
-tbun = process_fhir_bundle(testf)
-tpat = process_Patient(tbun$Patient)
+tbun <- process_fhir_bundle(testf)
+tpat <- process_Patient(tbun$Patient)
 head(names(tpat))
-tags = c("identifier.system3", "identifier.value3")
+tags <- c("identifier.system3", "identifier.value3")
 tpat[tags,,FALSE]
-tags2 = grep("extension.extension", rownames(tpat), value=TRUE)
+tags2 <- grep("extension.extension", rownames(tpat), value=TRUE)
 tpat[tags2,,FALSE]
 }
