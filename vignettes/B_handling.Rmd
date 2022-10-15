@@ -20,6 +20,7 @@ suppressMessages({
 library(BiocFHIR)
 library(DT)
 library(jsonlite)
+library(rjsoncons)
 })
 })
 ```
@@ -34,6 +35,9 @@ This text uses R commands that will work for an R (version 4.2 or greater) in wh
 BiocFHIR (version 0.0.14 or greater) has been installed.  The source codes are
 always available at [github](https://github.com/vjcitn/BiocFHIR) and may
 be available for installation by other means.
+
+We conclude this vignette with a very brief example of the
+use of consjson to interrogate the FHIR JSON documents directly.
 
 # Examining sample data, again
 
@@ -133,6 +137,34 @@ The fields collected in `process_Condition` are specified
 in `FHIR_retention_schemas()`.  Eventually this will
 need to become a user-specified element of ingestion and
 transformation.
+
+# Direct querying of FHIR JSON
+
+We've shown how we can operate on FHIR documents from the Synthea
+project using specific schemas to select elements from lists
+produced by parsing JSON.  The FHIR specification is very
+flexible, and the `process_*` methods defined here may
+not work for FHIR documents from other sources.
+
+The jsoncons library provides C++ code for parsing and
+filtering JSON, and the [rjsoncons](https://CRAN.R-project.org/package=rjsoncons)
+package is available to support JMESPATH queries.
+
+In this example, we'll take 4 Synthea FHIR documents and
+extract patient addresses to a data.frame.
+
+```{r dojme}
+z = make_test_json_set()
+myl = lapply(z[1:4], jsonlite::fromJSON) # list that rconsjson will convert to JSON
+library(rjsoncons)
+tmp = jmespath(myl, "[*].entry[0].resource.address") |> jsonlite::fromJSON()
+do.call(rbind,lapply(tmp, function(x) x[,-(1:2)]))
+```
+
+The JMESPATH query projects from all documents via the initial `[*]`.
+It then retrieves the address element from the resource element of
+the first ([0]) entry.  An overview of the hierarchical structure of
+`myl` can be obtained using `listviewer::jsonedit`.
 
 # Session information
 
