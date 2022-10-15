@@ -13,12 +13,8 @@ make_test_json_set <- function(target=paste0(tempdir(), "/jsontest"), reuse=TRUE
     if (!reuse) stop("target folder already exists")
     }
   else dir.create(target)
-  file.copy(system.file("zip/synthfhir.zip", package="BiocFHIR"), target)
-  od <- getwd()
-  setwd(target)
-  unzip("synthfhir.zip")
+  unzip(system.file("zip/synthfhir.zip", package="BiocFHIR"), exdir=target)
   ans <- dir(target, full.names=TRUE, pattern="json$")
-  setwd(od)
   invisible(ans)
 }
   

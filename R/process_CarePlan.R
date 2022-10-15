@@ -11,7 +11,7 @@ process_CarePlan <- function(CarePlan) {
 # record count
  stopifnot(inherits(CarePlan, "BiocFHIR.CarePlan"))
  ac <- CarePlan$activity
- recc <- vapply(ac, nrow, numeric(1)) -> recc
+ recc <- vapply(ac, nrow, numeric(1))
  idvec <- rep(CarePlan$id, recc)  # event ids
  getdc <- function(x) do.call(rbind, x$detail$code$coding)
  ac_coding <- do.call(rbind, lapply(ac, getdc))

@@ -20,7 +20,8 @@ Imports:
     DT,
     shiny,
     jsonlite, graph,
-    tidyr, visNetwork, igraph, utils, methods
+    tidyr, visNetwork, igraph, utils, methods,
+    BiocBaseUtils
 Suggests: knitr, testthat
 VignetteBuilder: knitr
 biocViews: Infrastructure, DataImport, DataRepresentation
