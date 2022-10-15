@@ -98,3 +98,9 @@ table(peek$entry$resource$resourceType)
 ```
 More details on these types
 can be examined at [http://hl7.org/fhir/clinicalsummary-module.html](http://hl7.org/fhir/clinicalsummary-module.html).
+
+# Session information
+
+```{r lksess}
+sessionInfo()
+```

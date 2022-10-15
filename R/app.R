@@ -7,16 +7,16 @@
 #'  FHIRtabs()
 #' }
 #' @export
-FHIRtabs = function() {
-  fns = make_test_json_set()
-  zn = gsub(".*jsontest/", "", fns)
-  zns = strsplit(zn, "_")
-  fn = sapply(zns, "[", 1)
-  ln = sapply(zns, "[", 2)
-  folks = paste(fn, ln, sep="_")
+FHIRtabs <- function() {
+  fns <- make_test_json_set()
+  zn <- gsub(".*jsontest/", "", fns)
+  zns <- strsplit(zn, "_")
+  fn <- vapply(zns, function(x) x[1], character(1))
+  ln <- vapply(zns, function(x) x[2], character(1))
+  folks <- paste(fn, ln, sep="_")
 
-  names(fns) = folks
-  ui = fluidPage(
+  names(fns) <- folks
+  ui <- fluidPage(
    sidebarLayout(
     sidebarPanel(
      helpText("FHIR viewer for synthea data subset"),
@@ -79,45 +79,45 @@ an individual.  A 'fallback' schema usage may be adopted in future versions to c
     )
    ) # fluidPage
 
-   server = function(input, output) {
-     fdat = reactive({
+   server <- function(input, output) {
+     fdat <- reactive({
       process_fhir_bundle(input$indiv)
       })
-     output$patient = DT::renderDataTable({
+     output$patient <- DT::renderDataTable({
          process_Patient(fdat()$Patient)
          })
-     output$observation = DT::renderDataTable({
+     output$observation <- DT::renderDataTable({
          process_Observation(fdat()$Observation)
          })
-     output$claims = DT::renderDataTable({
+     output$claims <- DT::renderDataTable({
          process_Claim(fdat()$Claim)
          })
-     output$condition = DT::renderDataTable({
+     output$condition <- DT::renderDataTable({
          process_Condition(fdat()$Condition)
          })
-     output$encounter = DT::renderDataTable({
+     output$encounter <- DT::renderDataTable({
          process_Encounter(fdat()$Encounter)
          })
-     output$Rx = DT::renderDataTable({
+     output$Rx <- DT::renderDataTable({
          process_MedicationRequest(fdat()$MedicationRequest)
          })
-     output$procedure = DT::renderDataTable({
+     output$procedure <- DT::renderDataTable({
          process_Procedure(fdat()$Procedure)
          })
-     output$careplan = DT::renderDataTable({
+     output$careplan <- DT::renderDataTable({
          process_CarePlan(fdat()$CarePlan)
          })
-     output$schema = renderPrint({
+     output$schema <- renderPrint({
          BiocFHIR::FHIR_retention_schemas()
          })
-     output$network = visNetwork::renderVisNetwork({
+     output$network <- visNetwork::renderVisNetwork({
          allin <- NULL
          data("allin", package="BiocFHIR")
          BiocFHIR::FHIR_retention_schemas()
-         g = build_proccond_igraph( allin ) 
+         g <- build_proccond_igraph( allin ) 
          display_proccond_igraph( g )
          })
-     output$pkgdesc = renderPrint({
+     output$pkgdesc <- renderPrint({
          packageDescription("BiocFHIR")
          })
      observeEvent(input$stopBtn, {

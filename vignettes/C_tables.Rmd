@@ -112,6 +112,7 @@ and then combine the resulting tables, which are
 designed to have a common set of columns.
 
 ```{r lkconds}
+data("allin", package="BiocFHIR")
 hascond = sapply(allin, function(x)length(x$Condition)>0)
 oo = do.call(rbind, lapply(allin[hascond], function(x)process_Condition(x$Condition)))
 dim(oo)
@@ -121,5 +122,11 @@ length(unique(oo$subject.reference))
 The most commonly reported conditions in the sample are:
 ```{r mostc}
 table(oo$code.coding.display) |> sort() |> tail()
+```
+
+# Session information
+
+```{r lksess}
+sessionInfo()
 ```
 

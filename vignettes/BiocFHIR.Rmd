@@ -37,6 +37,11 @@ decisions are made to help extract and annotate fields presumed to have
 high value.  Submit github issues if important fields are not being
 propagated.
 
+Install this package using
+```{r dobioc, eval=FALSE}
+BiocManager::install("BiocFHIR")
+```
+
 ## The basic structure of FHIR R4 JSON
 
 We use `jsonlite::fromJSON` to import a randomly selected
@@ -107,3 +112,10 @@ sapply(myl,length)
 ```
 We see with the last command that documents can have different numbers
 of components present.
+
+# Session information
+
+```{r lksess}
+sessionInfo()
+```
+

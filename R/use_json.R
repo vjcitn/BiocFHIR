@@ -1,5 +1,6 @@
 #' process a bundle of FHIR R4 JSON
 #' @importFrom jsonlite fromJSON
+#' @importFrom BiocBaseUtils selectSome
 #' @param json_file character(1) path to text in JSON format
 #' @return instance of FHIR.bundle, extending list
 #' @examples
@@ -54,7 +55,7 @@ process_fhir_bundle = function(json_file) {
 print.FHIR.bundle = function(x, ...) {
   cat("BiocFHIR FHIR.bundle instance.\n")
   cat("  resource types are:\n")
-  cat("  ", selectSome(names(x)))
+  cat("  ", BiocBaseUtils::selectSome(names(x)))
   cat("\n")
 }
 
@@ -68,25 +69,4 @@ print.FHIR.bundle = function(x, ...) {
 available_retention_schemas = function()
  names(FHIR_retention_schemas())
 
-
-#' from Biobase ...
-#' @return character vector
-#' @param obj any vector
-#' @param maxToShow numeric(1)
-selectSome = function (obj, maxToShow = 5) 
-{
-    len <- length(obj)
-    if (maxToShow < 3) 
-        maxToShow <- 3
-    if (len > maxToShow) {
-        maxToShow <- maxToShow - 1
-        bot <- ceiling(maxToShow/2)
-        top <- len - (maxToShow - bot - 1)
-        nms <- obj[c(1:bot, top:len)]
-        c(as.character(nms[1:bot]), "...", as.character(nms[-c(1:bot)]))
-    }
-    else if (is.factor(obj)) 
-        as.character(obj)
-    else obj
-}
 

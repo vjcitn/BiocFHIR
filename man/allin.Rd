@@ -14,6 +14,7 @@ allin
 collection of synthea FHIR documents ingested
 }
 \examples{
+data("allin", package="BiocFHIR")
 allin[[1]]
 }
 \keyword{datasets}

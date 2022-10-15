@@ -17,7 +17,7 @@ make network visualization
 }
 \examples{
 data("allin")
-g = build_proccond_igraph( allin ) 
+g <- build_proccond_igraph( allin ) 
 if (interactive()) {
  display_proccond_igraph( g )
 }
