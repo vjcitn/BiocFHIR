@@ -112,7 +112,9 @@ an individual.  A 'fallback' schema usage may be adopted in future versions to c
          })
      output$network <- visNetwork::renderVisNetwork({
          allin <- NULL
-         data("allin", package="BiocFHIR")
+         data_store <- new.env(parent = emptyenv())
+         data("allin", package="BiocFHIR", envir = data_store)
+         allin <- data_store[["allin"]]
          BiocFHIR::FHIR_retention_schemas()
          g <- build_proccond_igraph( allin ) 
          display_proccond_igraph( g )
