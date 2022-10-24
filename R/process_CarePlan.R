@@ -1,3 +1,4 @@
+  
 #' extract information from retained fields in CarePlan component of FHIR Bundle, produce simple data.frame
 #' @param CarePlan component of FHIR.bundle instance
 #' @return data.frame

@@ -4,4 +4,5 @@
 #' data("allin", package="BiocFHIR")
 #' allin[[1]]
 #' @format list
+#' @usage data("allin", package = "BiocFHIR")
 "allin"

@@ -8,7 +8,7 @@
 list
 }
 \usage{
-allin
+data("allin", package = "BiocFHIR")
 }
 \description{
 collection of synthea FHIR documents ingested

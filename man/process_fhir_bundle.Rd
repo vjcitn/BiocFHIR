@@ -4,16 +4,22 @@
 \alias{process_fhir_bundle}
 \title{process a bundle of FHIR R4 JSON}
 \usage{
-process_fhir_bundle(json_file)
+process_fhir_bundle(json_file, schemas = FHIR_retention_schemas())
 }
 \arguments{
 \item{json_file}{character(1) path to text in JSON format}
+
+\item{schemas}{list of character vectors defining expected fields, defaults to FHIR_retention_schemas()}
 }
 \value{
 instance of FHIR.bundle, extending list
 }
 \description{
 process a bundle of FHIR R4 JSON
+}
+\note{
+If one encounters the error "Element ... lacks field", the schemas argument can be modified by removing
+the noted field from the schema.
 }
 \examples{
 testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
