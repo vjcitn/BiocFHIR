@@ -2,14 +2,17 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom BiocBaseUtils selectSome
 #' @param json_file character(1) path to text in JSON format
+#' @param schemas list of character vectors defining expected fields, defaults to FHIR_retention_schemas()
 #' @return instance of FHIR.bundle, extending list
+#' @note If one encounters the error "Element ... lacks field", the schemas argument can be modified by removing
+#' the noted field from the schema.
 #' @examples
 #' testf = system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
 #'    package="BiocFHIR")
 #' tbun = process_fhir_bundle(testf)
 #' tbun
 #' @export
-process_fhir_bundle = function(json_file) {
+process_fhir_bundle = function(json_file, schemas = FHIR_retention_schemas()) {
   dat = fromJSON(json_file)
   stopifnot(all(names(dat) %in% c("resourceType", "type", "entry")))
   stopifnot(dat$resourceType == "Bundle")
@@ -17,8 +20,19 @@ process_fhir_bundle = function(json_file) {
   spl = split(de$resource, de$resource$resourceType)
   nres = names(spl)
   ok = intersect(nres, available_retention_schemas())
-  scs = FHIR_retention_schemas()
-  ans = lapply(ok, function(x) spl[[x]][, scs[[x]]])
+  scs = schemas
+  check_bundle_restype = function(restype, splitbundle, schemas) {
+   spln = names(splitbundle[[restype]])
+   scsn = schemas[[restype]]
+   data_lacks_field = setdiff(scsn, spln)
+   if (length(data_lacks_field)>0) {
+     message(sprintf("Element %s lacks field %s; retention schema must be modified to process this bundle.\n",
+            restype, data_lacks_field))
+     stop("Can't process bundle using existing retention schemas")
+     }
+   splitbundle[[restype]][,schemas[[restype]],drop=FALSE]
+   }
+  ans = lapply(ok, function(x) check_bundle_restype(x, spl, scs)) # fails if a field is missing
   names(ans) = ok
   ans = lapply(ok, function(x) {class(ans[[x]]) = c(paste0("BiocFHIR.", x), class(ans[[x]])); ans[[x]]})
   names(ans) = ok # lapply does not propagate by default
