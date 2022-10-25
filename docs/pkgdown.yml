@@ -1,0 +1,14 @@
+pandoc: '2.5'
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles:
+  A_upper: A_upper.html
+  B_handling: B_handling.html
+  BiocFHIR: BiocFHIR.html
+  C_tables: C_tables.html
+  D_linking: D_linking.html
+last_built: 2022-10-15T09:04Z
+urls:
+  reference: https://github.com/vjcitn/BiocFHIR/reference
+  article: https://github.com/vjcitn/BiocFHIR/articles
+

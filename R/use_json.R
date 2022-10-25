@@ -14,7 +14,7 @@
 #' @export
 process_fhir_bundle = function(json_file, schemas = FHIR_retention_schemas()) {
   dat = fromJSON(json_file)
-  stopifnot(all(names(dat) %in% c("resourceType", "type", "entry")))
+  stopifnot(all(c("resourceType", "type", "entry") %in% names(dat)))
   stopifnot(dat$resourceType == "Bundle")
   de = dat$entry
   spl = split(de$resource, de$resource$resourceType)
