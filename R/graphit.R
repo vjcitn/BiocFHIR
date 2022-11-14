@@ -45,7 +45,7 @@ make_condition_graph <- function(listOfProcessedBundles, keep_with_condition_onl
 
  nn <- lapply( listOfProcessedBundles, function(x) {
     curn <- getHumanName(x$Patient)
-    curconds <- try(process_Condition(x$Condition)) #$code.coding.display)
+    curconds <- try(process_Condition(x$Condition),silent=TRUE) #$code.coding.display)
     if (inherits(curconds, "try-error")) return(curconds)
     curconds <- curconds$code.coding.display
 #    if (!is.null(curconds)) {
@@ -59,7 +59,7 @@ make_condition_graph <- function(listOfProcessedBundles, keep_with_condition_onl
     })
  errs <- vapply(nn, function(x) inherits(x, "try-error"), logical(1))
  haserr <- sum(errs)
- if (haserr > 0) message("some bundles had no Condition component")
+ if (haserr > 0) message("...some bundles had no Condition component")
  conditions <- setdiff(nodes(condg), patients) # hokey
  ans <- list(graph=condg, patients=patients, conditions=conditions)
  class(ans) <- "BiocFHIR.FHIRgraph"
@@ -96,7 +96,7 @@ add_procedures <- function(fhirgraph, listOfProcessedBundles) {
  curg <- fhirgraph$graph
  nn <- lapply( listOfProcessedBundles, function(x) {
     curn <- getHumanName(x$Patient)
-    curprocs <- try(process_Procedure(x$Procedure)) # $code.display)
+    curprocs <- try(process_Procedure(x$Procedure),silent=TRUE) # $code.display)
     if (inherits(curprocs, "try-error")) return(curprocs)
     curprocs <- curprocs$code.display
     newnodes <- setdiff(curprocs, nodes(curg))
@@ -108,7 +108,7 @@ add_procedures <- function(fhirgraph, listOfProcessedBundles) {
     })
  errs <- vapply(nn, function(x) inherits(x, "try-error"), logical(1))
  haserr <- sum(errs)
- if (haserr > 0) message("some bundles had no Procedure component")
+ if (haserr > 0) message("...some bundles had no Procedure component")
  fhirgraph$procedures <- setdiff(nodes(curg), nodes(fhirgraph$graph))
  fhirgraph$graph <- curg
  fhirgraph
