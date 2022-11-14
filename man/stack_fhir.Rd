@@ -13,6 +13,9 @@ stack_fhir(blist, type, droperr = TRUE)
 
 \item{droperr}{logical(1) exclude records for which process_[type] fails, defaults to TRUE}
 }
+\value{
+data.frame
+}
 \description{
 convert data of a given FHIR type in a list of bundles to a data.frame
 }

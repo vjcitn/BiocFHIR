@@ -12,13 +12,15 @@ if (!exists("bs")) bs = lapply(myl, process_fhir_bundle)
 test_that("stack for CarePlan is correct",
  {
  ss = stack_fhir(bs, "CarePlan")
- expect_true(nrow(ss)==229)
+print(dim(ss))
+ expect_true(nrow(ss)==228)
  expect_true(ncol(ss)==10)
  })
 
 test_that("stack for Claim is correct",
  {
  ss = stack_fhir(bs, "Claim")
+print(dim(ss))
  expect_true(nrow(ss)==1423)
  expect_true(ncol(ss)==9)
  })
@@ -26,6 +28,7 @@ test_that("stack for Claim is correct",
 test_that("stack for Condition is correct",
  {
  ss = stack_fhir(bs, "Condition")
+print(dim(ss))
  expect_true(nrow(ss)==247)
  expect_true(ncol(ss)==5)
  })
@@ -33,6 +36,7 @@ test_that("stack for Condition is correct",
 test_that("stack for Encounter is correct",
  {
  ss = stack_fhir(bs, "Encounter")
+print(dim(ss))
 # print(dim(ss))
  expect_true(TRUE)
  expect_true(nrow(ss)==1032)
@@ -42,13 +46,15 @@ test_that("stack for Encounter is correct",
 test_that("stack for Immunization is correct",
  {
  ss = stack_fhir(bs, "Immunization")
- expect_true(nrow(ss)==373)
+print(dim(ss))
+ expect_true(nrow(ss)==372)
  expect_true(ncol(ss)==6)
  })
 
 test_that("stack for MedicationRequest is correct",
  {
  ss = stack_fhir(bs, "MedicationRequest")
+print(dim(ss))
  expect_true(nrow(ss)==391)
  expect_true(ncol(ss)==8)
  })
@@ -57,6 +63,7 @@ test_that("stack for MedicationRequest is correct",
 test_that("stack for Observation is correct",
  {
  ss = stack_fhir(bs, "Observation")
+print(dim(ss))
  expect_true(nrow(ss)==6860)
  expect_true(ncol(ss)==11)
  })
@@ -73,6 +80,7 @@ test_that("stack for Patient is correct",
 test_that("stack for Procedure is correct",
  {
  ss = stack_fhir(bs, "Procedure")
+print(dim(ss))
  expect_true(nrow(ss)==881)
  expect_true(ncol(ss)==8)
  })

@@ -21,6 +21,7 @@ library(BiocFHIR)
 library(DT)
 library(jsonlite)
 library(graph)
+library(igraph)
 })
 })
 ```

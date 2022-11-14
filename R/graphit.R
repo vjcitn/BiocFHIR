@@ -130,7 +130,6 @@ add_procedures <- function(fhirgraph, listOfProcessedBundles) {
 
 
 #' build graph with patients, conditions and procedures
-#' @import igraph
 #' @param listOfBundles list of processed FHIR bundles, processed with `process_fhir_bundle`
 #' @return instance of visIgraph from visNetworks
 #' @examples
@@ -140,10 +139,10 @@ add_procedures <- function(fhirgraph, listOfProcessedBundles) {
 build_proccond_igraph <- function( listOfBundles ) {
  condg <- make_condition_graph( listOfBundles )
  condg <- add_procedures( condg, listOfBundles )
- ii <- igraph.from.graphNEL( condg$graph )
- V(ii)$color[ names(V(ii)) %in% condg$conditions ] <- "red"
- V(ii)$color[ names(V(ii)) %in% condg$procedures ] <- "green"
- V(ii)$color[ names(V(ii)) %in% condg$patients ] <- "blue"
+ ii <- igraph::igraph.from.graphNEL( condg$graph )
+ igraph::V(ii)$color[ names(igraph::V(ii)) %in% condg$conditions ] <- "red"
+ igraph::V(ii)$color[ names(igraph::V(ii)) %in% condg$procedures ] <- "green"
+ igraph::V(ii)$color[ names(igraph::V(ii)) %in% condg$patients ] <- "blue"
  ii
 }
 

@@ -2,6 +2,7 @@
 #' @param blist list of FHIR bundles imported with process_fhir_bundle
 #' @param type character(1) type, in names(blist[[1]]), e.g.
 #' @param droperr logical(1) exclude records for which process_[type] fails, defaults to TRUE
+#' @return data.frame
 #' @examples
 #' jj = make_test_json_set()
 #' b2 = lapply(jj[1:2], process_fhir_bundle)
@@ -17,7 +18,12 @@ stack_fhir = function(blist, type, droperr=TRUE) {
      message(sprintf("...bundle %d missing a component\n", which(haserr)))
      pulls = pulls[-haserr]
      }
-   do.call(rbind, pulls)
+   ans = do.call(rbind, pulls)
+   bad = grep("Error in func", ans[,1]) # issue with AllergyIntolerance
+   if (length(bad)>0) {
+     ans = ans[-bad,]
+     }
+   ans
 }
 
 get_patient_stack = function(blist) {
