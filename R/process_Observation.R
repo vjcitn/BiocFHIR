@@ -11,7 +11,9 @@
 #' @export
 process_Observation <- function(Observation) {
  stopifnot(inherits(Observation, "BiocFHIR.Observation"))
- coding <- do.call(rbind, Observation$code$coding)
+ last = function(x) x[nrow(x),]
+ coding = lapply(Observation$code$coding, last)  # deal with, e.g., body temp/oral temp in one measurement
+ coding <- do.call(rbind, coding)
  ans <- data.frame(id=Observation$id, subject.reference=Observation$subject$reference, 
      code.coding=coding, valueQuantity=Observation$valueQuantity, 
      effectiveDateTime=Observation$effectiveDateTime, issued=Observation$issued)

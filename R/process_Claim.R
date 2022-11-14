@@ -11,7 +11,8 @@
 process_Claim <- function(Claim) {
  stopifnot(inherits(Claim, "BiocFHIR.Claim"))
  ins <- Claim$insurance
- insdf <- do.call(rbind, lapply(ins, tidyr::unnest, cols=c()))
+ #insdf <- do.call(rbind, lapply(ins, tidyr::unnest, cols=c()))
+ insdf = vapply(ins, function(x) x$coverage$display, character(1))
  data.frame(id=Claim$id,patient=Claim$patient,provider=Claim$provider, insurance=insdf,
      billablePeriod=Claim$billablePeriod, created=Claim$created)
 }

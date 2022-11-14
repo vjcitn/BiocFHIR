@@ -15,6 +15,9 @@ data.frame
 \description{
 extract information from retained fields in CarePlan component of FHIR Bundle, produce simple data.frame
 }
+\note{
+Nov 13 2022, added code to refine the 'category' data processing.
+}
 \examples{
 testf <- system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
    package="BiocFHIR")
