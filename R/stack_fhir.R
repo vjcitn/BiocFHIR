@@ -16,7 +16,7 @@ stack_fhir = function(blist, type, droperr=TRUE) {
    haserr = sapply(pulls, function(x) inherits(x, "try-error"))
    if (any(haserr)) {
      message(sprintf("...bundle %d missing a component\n", which(haserr)))
-     pulls = pulls[-haserr]
+     pulls = pulls[-which(haserr)]
      }
    ans = do.call(rbind, pulls)
    bad = grep("Error in func", ans[,1]) # issue with AllergyIntolerance

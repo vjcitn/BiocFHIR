@@ -15,3 +15,10 @@ side-effects of shiny app invocation
 \description{
 produce interactive tables with FHIR resources from a list of ingested bundles
 }
+\examples{
+if (interactive()) {
+tset = make_test_json_set()
+bl = lapply(tset, process_fhir_bundle)
+freq_app(bl)
+}
+}
