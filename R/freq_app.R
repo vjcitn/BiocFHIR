@@ -16,16 +16,25 @@
 #' @import shiny
 #' @param blist list of ingested bundles
 #' @return side-effects of shiny app invocation
+#' @examples
+#' if (interactive()) {
+#' tset = make_test_json_set()
+#' bl = lapply(tset, process_fhir_bundle)
+#' freq_app(bl)
+#' }
 #' @export
 freq_app = function(blist) {
  ui = fluidPage(
   sidebarLayout(
    sidebarPanel(
     helpText("BiocFHIR bundle tabulator"),
-    radioButtons("type", "type", choices=c("event", "patient"), selected="event"),
+    radioButtons("type", "type", choices=c("event", "patient", "provider", "center"), selected="event"),
+    textOutput("desc"),
    width=2),
    mainPanel(
     tabsetPanel(
+     tabPanel("Encounter",
+      DT::dataTableOutput("encounter")),
      tabPanel("Condition",
       DT::dataTableOutput("cond")),
      tabPanel("Med",
@@ -37,7 +46,7 @@ freq_app = function(blist) {
      tabPanel("Immunization",
       DT::dataTableOutput("immuz")),
      tabPanel("About",
-      helpText("Derived from synthea -p 10000")
+      helpText("Derived from run_synthea -p 10000")
       )
      )
     )
@@ -45,6 +54,10 @@ freq_app = function(blist) {
   )
 
 server = function(input, output, session) {
+ output$desc = renderText(sprintf("%d bundles ingested", length(blist)))
+ output$encounter = DT::renderDataTable(
+  summarise_bundles(blist, "Encounter")
+  )
  output$cond = DT::renderDataTable(
   summarise_bundles(blist, "Condition")
   )
