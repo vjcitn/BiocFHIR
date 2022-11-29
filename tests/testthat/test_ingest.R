@@ -1,4 +1,6 @@
 
+library(testthat)
+library(BiocFHIR)
 test_that("ingest succeeds", {
  library(BiocFHIR)
  example(process_fhir_bundle)
@@ -13,7 +15,8 @@ test_that("stack for CarePlan is correct",
  {
  ss = stack_fhir(bs, "CarePlan")
 print(dim(ss))
- expect_true(nrow(ss)==228)
+print(head(ss))
+ expect_true(nrow(ss)==231)
  expect_true(ncol(ss)==10)
  })
 
@@ -47,7 +50,7 @@ test_that("stack for Immunization is correct",
  {
  ss = stack_fhir(bs, "Immunization")
 print(dim(ss))
- expect_true(nrow(ss)==372)
+ expect_true(nrow(ss)==406)
  expect_true(ncol(ss)==6)
  })
 

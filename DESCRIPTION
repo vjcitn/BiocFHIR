@@ -1,7 +1,7 @@
 Package: BiocFHIR
 Title: Illustration of FHIR ingestion and transformation using R
-Version: 1.1.4
-Date: 2022-11-14
+Version: 1.1.5
+Date: 2022-11-29
 Authors@R: 
     c(person(
         "Vincent", "Carey", role = c("aut", "cre"),
