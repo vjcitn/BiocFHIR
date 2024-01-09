@@ -1,3 +1,8 @@
+![unitwarn.svg](.github/badges/unitwarn.svg)
+![unitpass.svg](.github/badges/unitpass.svg)
+![unitfail.svg](.github/badges/unitfail.svg)
+![date.svg](.github/badges/date.svg)
+![anvil-container.svg](.github/badges/anvil-container.svg)
 # BiocFHIR
 
 Illustration of FHIR V4 Processing with synthea data
