@@ -1,0 +1,132 @@
+---
+title: "Transforming FHIR documents to tables with BiocFHIR"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{Transforming FHIR documents to tables with BiocFHIR}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,results="hide",echo=FALSE}
+suppressPackageStartupMessages({
+suppressMessages({
+library(BiocFHIR)
+library(DT)
+library(jsonlite)
+})
+})
+```
+
+# Introduction
+
+The purpose of this vignette is to provide
+details on how FHIR documents are
+transformed to tables in BiocFHIR.
+
+This text uses R commands that will work for an R (version 4.2 or greater) in which
+BiocFHIR (version 0.0.14 or greater) has been installed.  The source codes are
+always available at [github](https://github.com/vjcitn/BiocFHIR) and may
+be available for installation by other means.
+
+# Examining sample data, again
+
+In the "Upper level FHIR concepts" vignette, we used the
+following code to get a peek at the information
+structure in a single document representing a Bundle
+associated with a patient.
+
+```{r takepeek}
+tfile = dir(system.file("json", package="BiocFHIR"), full=TRUE)
+peek = jsonlite::fromJSON(tfile)
+names(peek)
+peek$resourceType
+names(peek$entry)
+length(names(peek$entry$resource))
+class(peek$entry$resource)
+dim(peek$entry$resource)
+head(names(peek$entry$resource))
+```
+
+We perform a first stage of transformation with `process_fhir_bundle`:
+```{r txpeek}
+bu = process_fhir_bundle(tfile)
+bu
+```
+
+# Bundle to data frames
+
+Each processed bundle is a collection of data.frame instances, formed
+by splitting the input "entry" element by "resourceType".
+These data.frames are mostly filled with NA missing values, but
+some columns have been ingested as lists.  Executive decisions
+are made in the package regarding which columns are likely
+to hold useful information.  Thus we have
+
+```{r lkpo}
+po1 <- process_Observation(bu$Observation)
+dim(po1)
+datatable(po1)
+```
+
+# Filtering FHIR elements
+
+A list of vectors of field names serves as the
+basis for filtering JSON elements into
+records for tabulation.
+```{r lksch}
+FHIR_retention_schemas()
+```
+
+Because each observation on Blood Pressure includes a "component"
+element with two elements (for systolic and diastolic blood pressure readings),
+special code is required to map the metadata for the Blood Pressure observations
+to the specific values for each component.
+
+# The resources extracted from a bundle
+
+The `process_*` functions in BiocFHIR address various
+resource types.  As of version 0.0.15 we have
+
+```{r listt}
+ls("package:BiocFHIR") |> grep(x=_, "process_[A-Z]", value=TRUE)
+```
+
+There is no guarantee that any given bundle with have
+resources among all these types.
+
+# Accumulating resources across bundles
+
+Bundles are not guaranteed to have any specific
+resources.  To assemble all information on
+conditions recorded in the Synthea sample,
+we must program defensively.  We obtain
+the indices of bundles possessing a "Condition" resource,
+and then combine the resulting tables, which are
+designed to have a common set of columns.
+
+```{r lkconds}
+data("allin", package="BiocFHIR")
+hascond = sapply(allin, function(x)length(x$Condition)>0)
+oo = do.call(rbind, lapply(allin[hascond], function(x)process_Condition(x$Condition)))
+dim(oo)
+length(unique(oo$subject.reference))
+```
+
+The most commonly reported conditions in the sample are:
+```{r mostc}
+table(oo$code.coding.display) |> sort() |> tail()
+```
+
+# Session information
+
+```{r lksess}
+sessionInfo()
+```
+

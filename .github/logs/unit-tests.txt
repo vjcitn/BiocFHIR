@@ -1,0 +1,81 @@
+✔ | F W  S  OK | Context
+
+⠏ |          0 | ingest                                                         [1] 231  10
+                                    id                 system          code
+1 3eae0267-0426-439c-a616-04c1dea70dd1 http://snomed.info/sct        409002
+2 3eae0267-0426-439c-a616-04c1dea70dd1 http://snomed.info/sct      58332002
+3 3eae0267-0426-439c-a616-04c1dea70dd1 http://snomed.info/sct      58332002
+4 86d99438-bcfe-4149-b581-555f4e8243bb http://snomed.info/sct     386463000
+5 86d99438-bcfe-4149-b581-555f4e8243bb http://snomed.info/sct     413473000
+6 86d99438-bcfe-4149-b581-555f4e8243bb http://snomed.info/sct 1151000175103
+                                       display      status
+1                            Food allergy diet in-progress
+2                            Allergy education in-progress
+3                            Allergy education in-progress
+4       Prescribed activity/exercise education in-progress
+5         Counseling about alcohol consumption in-progress
+6 Dietary approaches to stop hypertension diet in-progress
+                     location        category.system   category.code
+1      HALLMARK HEALTH SYSTEM http://snomed.info/sct 326051000000105
+2      HALLMARK HEALTH SYSTEM http://snomed.info/sct 326051000000105
+3      HALLMARK HEALTH SYSTEM http://snomed.info/sct 326051000000105
+4 RIVERBEND MEDICAL GROUP INC http://snomed.info/sct       443402002
+5 RIVERBEND MEDICAL GROUP INC http://snomed.info/sct       443402002
+6 RIVERBEND MEDICAL GROUP INC http://snomed.info/sct       443402002
+                            category.display
+1                                  Self care
+2                                  Self care
+3                                  Self care
+4 Lifestyle education regarding hypertension
+5 Lifestyle education regarding hypertension
+6 Lifestyle education regarding hypertension
+                              subject.reference
+1 urn:uuid:15e20922-0f51-47a0-9345-225906c35fbf
+2 urn:uuid:15e20922-0f51-47a0-9345-225906c35fbf
+3 urn:uuid:15e20922-0f51-47a0-9345-225906c35fbf
+4 urn:uuid:aef6dabb-9372-44bc-abf1-f3111812eec7
+5 urn:uuid:aef6dabb-9372-44bc-abf1-f3111812eec7
+6 urn:uuid:aef6dabb-9372-44bc-abf1-f3111812eec7
+
+⠹ | 1 1      1 | ingest                                                         [1] 1423    9
+[1] 247   5
+[1] 1032    9
+
+⠇ | 1 1      7 | ingest                                                         [1] 406   6
+[1] 391   8
+[1] 6860   11
+
+⠴ | 1 1     14 | ingest                                                         [1] 30 40
+[1] 881   8
+
+⠋ | 1 1     19 | ingest                                                         
+✖ | 1 1     20 | ingest [12.2s]
+────────────────────────────────────────────────────────────────────────────────
+Warning ('test_ingest.R:6:2'): ingest succeeds
+no help found for ‘process_fhir_bundle’
+Backtrace:
+    ▆
+ 1. └─utils::example(process_fhir_bundle) at test_ingest.R:6:2
+
+Error ('test_ingest.R:7:2'): ingest succeeds
+Error in `eval(code, test_env)`: object 'tbun' not found
+Backtrace:
+    ▆
+ 1. └─testthat::expect_true(length(names(tbun)) > 0) at test_ingest.R:7:2
+ 2.   └─testthat::quasi_label(enquo(object), label, arg = "object")
+ 3.     └─rlang::eval_bare(expr, quo_get_env(quo))
+────────────────────────────────────────────────────────────────────────────────
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 12.3 s
+
+── Failed tests ────────────────────────────────────────────────────────────────
+Error ('test_ingest.R:7:2'): ingest succeeds
+Error in `eval(code, test_env)`: object 'tbun' not found
+Backtrace:
+    ▆
+ 1. └─testthat::expect_true(length(names(tbun)) > 0) at test_ingest.R:7:2
+ 2.   └─testthat::quasi_label(enquo(object), label, arg = "object")
+ 3.     └─rlang::eval_bare(expr, quo_get_env(quo))
+
+[ FAIL 1 | WARN 1 | SKIP 0 | PASS 20 ]
