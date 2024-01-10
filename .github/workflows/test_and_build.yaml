@@ -164,7 +164,7 @@ jobs:
             git config user.email github-actions@github.com
             rm -rf .github/badges
             cp -r /tmp/badges .github/badges
-            BADGELINES=$(awk '/^#/{exit} /^!\[/{count++} END{print count}' README.md)
+            BADGELINES=$(awk '/^#/{exit} /^\[*!\[/{count++} END{print count}' README.md)
             # Remove badges
             tail -n +$((BADGELINES + 1)) README.md > /tmp/README.md
             # Add badges to new README
