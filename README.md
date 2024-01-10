@@ -1,8 +1,10 @@
-[![unit-warn.svg](.github/badges/unit-warn.svg)](.github/logs/unit-tests.txt)
 [![unit-pass.svg](.github/badges/unit-pass.svg)](.github/logs/unit-tests.txt)
-[![unit-fail.svg](.github/badges/unit-fail.svg)](.github/logs/unit-tests.txt)
 ![date.svg](.github/badges/date.svg)
 [![anvil-container.svg](.github/badges/anvil-container.svg)
+[[![unit-pass.svg](.github/badges/unit-pass.svg)](.github/logs/unit-tests.txt)](.github/logs/unit-tests.txt)
+[[![unit-fail.svg](.github/badges/unit-fail.svg)](.github/logs/unit-tests.txt)](.github/logs/unit-tests.txt)
+![date.svg](.github/badges/date.svg)
+[[![anvil-container.svg](.github/badges/anvil-container.svg)
 # BiocFHIR
 
 Illustration of FHIR V4 Processing with synthea data
