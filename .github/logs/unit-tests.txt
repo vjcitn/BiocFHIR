@@ -44,16 +44,17 @@
 
 ⠧ |          8 | ingest                                                         [1] 406   6
 [1] 391   8
-
-⠸ |         14 | ingest                                                         [1] 6860   11
+[1] 6860   11
 
 ⠼ |         15 | ingest                                                         [1] 30 40
 [1] 881   8
 
 ⠏ |         20 | ingest                                                         
-✔ |         21 | ingest [13.0s]
+✔ |         21 | ingest [13.1s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 13.0 s
+Duration: 13.1 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 21 ]
+
+YEE-HAW - supreme code.
