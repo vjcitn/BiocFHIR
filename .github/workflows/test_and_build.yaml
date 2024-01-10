@@ -168,13 +168,13 @@ jobs:
             # Remove badges
             tail -n +$((BADGELINES + 1)) README.md > /tmp/README.md
             # Add badges to new README
-            ls .github/badges/ | xargs -i sed -i '1i![{}](.github/badges/{})' /tmp/README.md
+            ls .github/badges/ | xargs -i sed -i '1i![{}](https://raw.githubusercontent.com/${{github.repository_owner}}/${{ github.event.repository.name }}/main/.github/badges/{})' /tmp/README.md
             # Add URLs to unit badges
             sed -i '/\.github\/badges\/unit-/s/^/[/' /tmp/README.md
-            sed -i '/\.github\/badges\/unit-/s/$/](\.github\/logs\/unit-tests\.txt)/' /tmp/README.md
+            sed -i '/\.github\/badges\/unit-/s/$/](https:\/\/raw\.githubusercontent\.com\/${{github.repository_owner}}\/${{ github.event.repository.name }}\/main\/\.github\/logs\/unit-tests\.txt)/' /tmp/README.md
             # Add URL to custom image
             sed -i '/\.github\/badges\/anvil-container/s/^/[/' /tmp/README.md
-            sed -i '/\.github\/badges\/anvil-container/s/$/](https:\/\/github.com\/${{github.repository}}\/pkgs\/container\/${{ github.event.repository.name }})/' /tmp/README.md
+            sed -i '/\.github\/badges\/anvil-container/s/$/](https:\/\/github.com\/${{github.repository_owner}}\/${{ github.event.repository.name }}\/pkgs\/container\/${{ github.event.repository.name }})/' /tmp/README.md
             cp /tmp/README.md README.md
             git add .github
             git add README.md

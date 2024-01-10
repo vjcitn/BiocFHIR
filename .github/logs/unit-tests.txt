@@ -56,5 +56,3 @@
 Duration: 13.1 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 21 ]
-
-YEE-HAW - supreme code.
