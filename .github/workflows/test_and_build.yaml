@@ -1,6 +1,7 @@
 name: Container tests
 on:
   workflow_dispatch:
+  push:
 jobs:
   test:
     name: Run unit tests and vignettes
