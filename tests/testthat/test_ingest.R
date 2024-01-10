@@ -3,7 +3,9 @@ library(testthat)
 library(BiocFHIR)
 test_that("ingest succeeds", {
  library(BiocFHIR)
- example(process_fhir_bundle)
+ testf <- system.file("json/Vince741_Rogahn59_6fa3d4ab-c0b6-424a-89d8-7d9105129296.json",
+    package="BiocFHIR")
+ tbun <- process_fhir_bundle(testf)
  expect_true(length(names(tbun))>0)
 })
 
