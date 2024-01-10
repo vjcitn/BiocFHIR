@@ -68,10 +68,10 @@ graph        (NA -> 1.80.0) [CRAN]
 * checking for LF line-endings in source and make files and shell scripts
 * checking for empty or unneeded directories
 * looking to see if a ‘data/datalist’ file should be added
-* building ‘BiocFHIR_1.5.0.tar.gz’
+* building ‘BiocFHIR_1.5.3.tar.gz’
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpNSlk8m/BiocFHIR_1.5.0.tar.gz --install-tests 
+  /tmp/RtmpIlstT6/BiocFHIR_1.5.3.tar.gz --install-tests 
 * installing to library ‘/usr/local/lib/R/site-library’
 * installing *source* package ‘BiocFHIR’ ...
 ** using staged installation
